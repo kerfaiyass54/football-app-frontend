@@ -5,5 +5,6 @@ export interface Player{
   position: string,
   teamName: string,
   nationality: string
-  age: number
+  age: number,
+  ability: number
 }
