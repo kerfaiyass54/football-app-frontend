@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TournamentsViewComponent } from './tournaments-view.component';
+import { SetLineUpComponent } from './set-line-up.component';
 
-describe('TournamentsViewComponent', () => {
-  let component: TournamentsViewComponent;
-  let fixture: ComponentFixture<TournamentsViewComponent>;
+describe('SetLineUpComponent', () => {
+  let component: SetLineUpComponent;
+  let fixture: ComponentFixture<SetLineUpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TournamentsViewComponent]
+      imports: [SetLineUpComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TournamentsViewComponent);
+    fixture = TestBed.createComponent(SetLineUpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
