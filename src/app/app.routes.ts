@@ -10,6 +10,10 @@ import {UserManagementComponent} from "./admin/user-management/user-management.c
 import {LocationManagementComponent} from "./admin/location-management/location-management.component";
 import {AddLocationComponent} from "./admin/location-management/add-location/add-location.component";
 import {DetailsLocationComponent} from "./admin/location-management/details-location/details-location.component";
+import {FieldsTrainManagementComponent} from "./builder/fields-train-management/fields-train-management.component";
+import {FieldsDetailsComponent} from "./builder/fields-train-management/fields-details/fields-details.component";
+import {AddFieldComponent} from "./builder/fields-train-management/add-field/add-field.component";
+import {MakeUpgradeComponent} from "./builder/fields-train-management/make-upgrade/make-upgrade.component";
 
 export const routes: Routes = [
   {
@@ -43,7 +47,22 @@ export const routes: Routes = [
   },{
     path:'organizer',
     component: OrganizerComponent,
-    children:[]
+    children:[
+      {
+      path: 'fields',
+      component: FieldsTrainManagementComponent
+      },
+      {
+        path: 'add-field',
+        component: AddFieldComponent
+      },
+      {
+        path: 'details-field/:id',
+        component: FieldsDetailsComponent
+      },{
+      path: 'upgrade/:id',
+        component: MakeUpgradeComponent
+      }]
   },{
     path:'player',
     component: PlayerComponent,
