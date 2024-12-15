@@ -14,6 +14,10 @@ import {FieldsTrainManagementComponent} from "./builder/fields-train-management/
 import {FieldsDetailsComponent} from "./builder/fields-train-management/fields-details/fields-details.component";
 import {AddFieldComponent} from "./builder/fields-train-management/add-field/add-field.component";
 import {MakeUpgradeComponent} from "./builder/fields-train-management/make-upgrade/make-upgrade.component";
+import {StadiumsManagementComponent} from "./builder/stadiums-management/stadiums-management.component";
+import {BuildStadiumComponent} from "./builder/stadiums-management/build-stadium/build-stadium.component";
+import {DetailsStadiumComponent} from "./builder/stadiums-management/details-stadium/details-stadium.component";
+import {UpgradeStadiumComponent} from "./builder/stadiums-management/upgrade-stadium/upgrade-stadium.component";
 
 export const routes: Routes = [
   {
@@ -62,6 +66,19 @@ export const routes: Routes = [
       },{
       path: 'upgrade/:id',
         component: MakeUpgradeComponent
+      },{
+      path:'stadiums',
+        component: StadiumsManagementComponent
+      },
+      {
+        path: 'build-stadium',
+        component: BuildStadiumComponent
+      },{
+      path:'details-stadium/:id',
+        component: DetailsStadiumComponent
+      },{
+      path:'upgrade/:id',
+        component: UpgradeStadiumComponent
       }]
   },{
     path:'player',
