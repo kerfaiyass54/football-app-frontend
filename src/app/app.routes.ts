@@ -23,39 +23,27 @@ export const routes: Routes = [
   {
     path:'admin',
     component: AdminComponent,
-    children:[]
+    children:[ {
+      path:'users',
+      component:UserManagementComponent
+    },{
+      path:'locations',
+      component:LocationManagementComponent
+    },{
+      path:'add-location',
+      component:AddLocationComponent
+    },{
+      path:'details-location/:id',
+      component:DetailsLocationComponent
+    }]
   },
   {
     path:'builder',
     component: BuilderComponent,
-    children:[]
-  },{
-    path:'manager',
-    component: ManagerComponent,
-    children:[
-      {
-        path:'users',
-        component:UserManagementComponent
-      },{
-        path:'locations',
-        component:LocationManagementComponent
-      },{
-        path:'add-location',
-        component:AddLocationComponent
-      },{
-        path:'details-location/:id',
-        component:DetailsLocationComponent
-      }
-
-    ]
-  },{
-    path:'organizer',
-    component: OrganizerComponent,
-    children:[
-      {
+    children:[{
       path: 'fields',
       component: FieldsTrainManagementComponent
-      },
+    },
       {
         path: 'add-field',
         component: AddFieldComponent
@@ -64,22 +52,34 @@ export const routes: Routes = [
         path: 'details-field/:id',
         component: FieldsDetailsComponent
       },{
-      path: 'upgrade/:id',
+        path: 'upgrade/:id',
         component: MakeUpgradeComponent
       },{
-      path:'stadiums',
+        path:'stadiums',
         component: StadiumsManagementComponent
       },
       {
         path: 'build-stadium',
         component: BuildStadiumComponent
       },{
-      path:'details-stadium/:id',
+        path:'details-stadium/:id',
         component: DetailsStadiumComponent
       },{
-      path:'upgrade/:id',
+        path:'upgrade/:id',
         component: UpgradeStadiumComponent
       }]
+  },{
+    path:'manager',
+    component: ManagerComponent,
+    children:[
+
+
+    ]
+  },{
+    path:'organizer',
+    component: OrganizerComponent,
+    children:[
+      ]
   },{
     path:'player',
     component: PlayerComponent,
