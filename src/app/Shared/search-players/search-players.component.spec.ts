@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IewTrounamentComponent } from './iew-trounament.component';
+import { SearchPlayersComponent } from './search-players.component';
 
-describe('IewTrounamentComponent', () => {
-  let component: IewTrounamentComponent;
-  let fixture: ComponentFixture<IewTrounamentComponent>;
+describe('SearchPlayersComponent', () => {
+  let component: SearchPlayersComponent;
+  let fixture: ComponentFixture<SearchPlayersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IewTrounamentComponent]
+      imports: [SearchPlayersComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(IewTrounamentComponent);
+    fixture = TestBed.createComponent(SearchPlayersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

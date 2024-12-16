@@ -73,7 +73,6 @@ export const routes: Routes = [
     component: ManagerComponent,
     children:[
 
-
     ]
   },{
     path:'organizer',
