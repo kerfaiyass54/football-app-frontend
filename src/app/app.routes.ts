@@ -18,6 +18,27 @@ import {StadiumsManagementComponent} from "./builder/stadiums-management/stadium
 import {BuildStadiumComponent} from "./builder/stadiums-management/build-stadium/build-stadium.component";
 import {DetailsStadiumComponent} from "./builder/stadiums-management/details-stadium/details-stadium.component";
 import {UpgradeStadiumComponent} from "./builder/stadiums-management/upgrade-stadium/upgrade-stadium.component";
+import {CareerManagementComponent} from "./manager/career-management/career-management.component";
+import {AddCareerComponent} from "./manager/career-management/add-career/add-career.component";
+import {CareerDetailsComponent} from "./manager/career-management/career-details/career-details.component";
+import {TournamentDetailsComponent} from "./manager/consult-tournament/tournament-details/tournament-details.component";
+import {ConsultTournamentComponent} from "./manager/consult-tournament/consult-tournament.component";
+import {MatchManagementComponent} from "./manager/match-management/match-management.component";
+import {MatchDetailsComponent} from "./manager/match-management/match-details/match-details.component";
+import {PlayerManagementComponent} from "./manager/player-management/player-management.component";
+import {PlayerDetailsComponent} from "./manager/player-management/player-details/player-details.component";
+import {UpdatePlayerComponent} from "./manager/player-management/update-player/update-player.component";
+import {PlayerTransferComponent} from "./manager/player-transfer/player-transfer.component";
+import {TransferAdjustComponent} from "./manager/player-transfer/transfer-adjust/transfer-adjust.component";
+import {TransferDetailComponent} from "./manager/player-transfer/transfer-detail/transfer-detail.component";
+import {SeeInjuriesComponent} from "./manager/see-injuries/see-injuries.component";
+import {TeamManagementComponent} from "./manager/team-management/team-management.component";
+import {SetLineUpComponent} from "./manager/team-management/set-line-up/set-line-up.component";
+import {TeamResultsComponent} from "./manager/team-results/team-results.component";
+import {TrainingManagementComponent} from "./manager/training-management/training-management.component";
+import {
+  SetTrainingSessionComponent
+} from "./manager/training-management/set-training-session/set-training-session.component";
 
 export const routes: Routes = [
   {
@@ -72,6 +93,82 @@ export const routes: Routes = [
     path:'manager',
     component: ManagerComponent,
     children:[
+      {
+        path:'career',
+        component: CareerManagementComponent
+      },
+      {
+        path:'add-career',
+        component: AddCareerComponent
+      },
+      {
+        path: 'career-details/:id',
+        component: CareerDetailsComponent
+      },
+      {
+        path:'tournament/:id',
+        component: TournamentDetailsComponent
+      },
+      {
+        path:'tourns',
+        component: ConsultTournamentComponent
+      },
+      {
+        path:'match',
+        component: MatchManagementComponent
+      },
+      {
+        path:'match/:id',
+        component: MatchDetailsComponent
+      },
+      {
+        path:'players',
+        component: PlayerManagementComponent
+      },
+      {
+        path:'details-player/:id',
+        component: PlayerDetailsComponent
+      },
+      {
+        path:'update-player/:id',
+        component: UpdatePlayerComponent
+      },
+      {
+        path:'transfers',
+        component: PlayerTransferComponent
+      },
+      {
+        path:'transfer-adjust/:id',
+        component: TransferAdjustComponent
+      },
+      {
+        path:'transfer/:id',
+        component: TransferDetailComponent
+      },
+      {
+        path:'injuries',
+        component: SeeInjuriesComponent
+      },
+      {
+        path:'team',
+        component: TeamManagementComponent
+      },
+      {
+        path:'lineup',
+        component: SetLineUpComponent
+      },
+      {
+        path:'results/:id',
+        component: TeamResultsComponent
+      },
+      {
+        path:'training/:id',
+        component: TrainingManagementComponent
+      },
+      {
+        path:'session/:id',
+        component: SetTrainingSessionComponent
+      }
 
     ]
   },{
