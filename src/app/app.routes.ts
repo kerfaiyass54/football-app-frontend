@@ -64,6 +64,12 @@ import {ViewTeamsComponent} from "./organizer/view-teams/view-teams.component";
 import {AddTeamComponent} from "./organizer/view-teams/add-team/add-team.component";
 import {ViewTeamComponent} from "./organizer/view-teams/view-team/view-team.component";
 import {UpdateTeamComponent} from "./organizer/view-teams/update-team/update-team.component";
+import {ConsultMatchesComponent} from "./player/consult-matches/consult-matches.component";
+import {ConsultRatingsComponent} from "./player/consult-ratings/consult-ratings.component";
+import {ConsultTrainingsComponent} from "./player/consult-trainings/consult-trainings.component";
+import {ContractManagementComponent} from "./player/contract-management/contract-management.component";
+import {SeeStatisticsComponent} from "./player/see-statistics/see-statistics.component";
+import {TeamConsultComponent} from "./player/team-consult/team-consult.component";
 
 export const routes: Routes = [
   {
@@ -300,7 +306,27 @@ export const routes: Routes = [
   },{
     path:'player',
     component: PlayerComponent,
-    children:[]
+    children:[
+      {
+        path:'matches',
+        component:ConsultMatchesComponent
+      },{
+        path:'ratings',
+        component:ConsultRatingsComponent
+      },{
+        path:'trainings',
+        component:ConsultTrainingsComponent
+      },{
+        path:'contracts',
+        component:ContractManagementComponent
+      },{
+        path:'stats',
+        component:SeeStatisticsComponent
+      },{
+        path:'team',
+        component:TeamConsultComponent
+      }
+    ]
   },{
     path:'supporter',
     component: SupporterComponent,
