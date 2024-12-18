@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SetStadiumComponent } from './set-stadium.component';
+import { SetStadiumsComponent } from './set-stadiums.component';
 
-describe('SetStadiumComponent', () => {
-  let component: SetStadiumComponent;
-  let fixture: ComponentFixture<SetStadiumComponent>;
+describe('SetStadiumsComponent', () => {
+  let component: SetStadiumsComponent;
+  let fixture: ComponentFixture<SetStadiumsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SetStadiumComponent]
+      imports: [SetStadiumsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SetStadiumComponent);
+    fixture = TestBed.createComponent(SetStadiumsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

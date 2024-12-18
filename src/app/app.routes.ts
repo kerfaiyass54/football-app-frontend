@@ -39,6 +39,31 @@ import {TrainingManagementComponent} from "./manager/training-management/trainin
 import {
   SetTrainingSessionComponent
 } from "./manager/training-management/set-training-session/set-training-session.component";
+import {MatchesManagementComponent} from "./organizer/matches-management/matches-management.component";
+import {SetRatingsComponent} from "./organizer/matches-management/set-ratings/set-ratings.component";
+import {SetStadiumsComponent} from "./organizer/matches-management/set-stadiums/set-stadiums.component";
+import {SetTicketsComponent} from "./organizer/matches-management/set-tickets/set-tickets.component";
+import {ViewStatsComponent} from "./organizer/matches-management/view-stats/view-stats.component";
+import {RefereeManagementComponent} from "./organizer/referee-management/referee-management.component";
+import {AddRefereeComponent} from "./organizer/referee-management/add-referee/add-referee.component";
+import {AppointRefereeComponent} from "./organizer/referee-management/appoint-referee/appoint-referee.component";
+import {ConsultRefereeComponent} from "./organizer/referee-management/consult-referee/consult-referee.component";
+import {TournamentEditionsComponent} from "./organizer/tournament-editions/tournament-editions.component";
+import {AddEditionComponent} from "./organizer/tournament-editions/add-edition/add-edition.component";
+import {BestStatsComponent} from "./organizer/tournament-editions/best-stats/best-stats.component";
+import {ConsultEditionComponent} from "./organizer/tournament-editions/consult-edition/consult-edition.component";
+import {GroupStatsComponent} from "./organizer/tournament-editions/group-stats/group-stats.component";
+import {PlayerStatsComponent} from "./organizer/tournament-editions/player-stats/player-stats.component";
+import {SetResultsComponent} from "./organizer/tournament-editions/set-results/set-results.component";
+import {TeamStatsComponent} from "./organizer/tournament-editions/team-stats/team-stats.component";
+import {TournamentsManagementComponent} from "./organizer/tournaments-management/tournaments-management.component";
+import {GeneralStatsComponent} from "./organizer/tournaments-management/general-stats/general-stats.component";
+import {SetRulesComponent} from "./organizer/tournaments-management/set-rules/set-rules.component";
+import {ViewTournamentComponent} from "./organizer/tournaments-management/view-tournament/view-tournament.component";
+import {ViewTeamsComponent} from "./organizer/view-teams/view-teams.component";
+import {AddTeamComponent} from "./organizer/view-teams/add-team/add-team.component";
+import {ViewTeamComponent} from "./organizer/view-teams/view-team/view-team.component";
+import {UpdateTeamComponent} from "./organizer/view-teams/update-team/update-team.component";
 
 export const routes: Routes = [
   {
@@ -175,6 +200,102 @@ export const routes: Routes = [
     path:'organizer',
     component: OrganizerComponent,
     children:[
+      {
+        path:'matches',
+        component:MatchesManagementComponent
+      },
+      {
+        path:'ratings:/id',
+        component: SetRatingsComponent
+      },
+      {
+        path:'stadium/:id',
+        component: SetStadiumsComponent
+      },
+      {
+        path:'tickets/:id',
+        component: SetTicketsComponent
+      },
+      {
+        path: 'view-stats/:id',
+        component: ViewStatsComponent
+      },
+      {
+        path:'referees',
+        component: RefereeManagementComponent
+      },
+      {
+        path:'add-ref',
+        component: AddRefereeComponent
+      },
+      {
+        path:'appoint/:id',
+        component: AppointRefereeComponent
+      },
+      {
+        path:'consult/:id',
+        component: ConsultRefereeComponent
+      },
+      {
+        path:'tournament-edition',
+        component: TournamentEditionsComponent
+      },
+      {
+        path:'add-edition',
+        component: AddEditionComponent
+      },
+      {
+        path:'stats/:id',
+        component: BestStatsComponent
+      },
+      {
+        path:'consult-edition/:id',
+        component: ConsultEditionComponent
+      },
+      {
+        path:'stats-group/:id',
+        component: GroupStatsComponent
+      },
+      {
+        path:'player-stats/:id',
+        component: PlayerStatsComponent
+      },
+      {
+        path:'set-results/:id',
+        component: SetResultsComponent
+      },
+      {
+        path:'team-stats/:id',
+        component: TeamStatsComponent
+      },
+      {
+        path:'Tournaments',
+        component: TournamentsManagementComponent
+      },
+      {
+        path:'stats/:id',
+        component:GeneralStatsComponent
+      },
+      {
+        path:'rules/:id',
+        component:SetRulesComponent
+      },
+      {
+        path:'view/:id',
+        component:ViewTournamentComponent
+      },{
+        path:'teams',
+        component:ViewTeamsComponent
+      },{
+        path:'add-team',
+        component:AddTeamComponent
+      },{
+        path:'view-team/:id',
+        component:ViewTeamComponent
+      },{
+        path:'update-team/:id',
+        component:UpdateTeamComponent
+      },
       ]
   },{
     path:'player',
