@@ -72,6 +72,13 @@ import {SeeStatisticsComponent} from "./player/see-statistics/see-statistics.com
 import {TeamConsultComponent} from "./player/team-consult/team-consult.component";
 import {ChangeLocationComponent} from "./supporter/change-location/change-location.component";
 import {ConsultTicketsComponent} from "./supporter/consult-tickets/consult-tickets.component";
+import {AskForTransferComponent} from "./team/ask-for-transfer/ask-for-transfer.component";
+import {ListMatchesComponent} from "./team/list-matches/list-matches.component";
+import {ListPlayerComponent} from "./team/list-player/list-player.component";
+import {ListTournamentsComponent} from "./team/list-tournaments/list-tournaments.component";
+import {ListTrainsComponent} from "./team/list-trains/list-trains.component";
+import {LookForManagerComponent} from "./team/look-for-manager/look-for-manager.component";
+import {ManagerDetailsComponent} from "./team/manager-details/manager-details.component";
 
 export const routes: Routes = [
   {
@@ -347,6 +354,29 @@ export const routes: Routes = [
   },{
     path:'team',
     component: TeamComponent,
-    children:[]
+    children:[
+      {
+        path:'transfer',
+        component: AskForTransferComponent
+      },{
+        path:'matches',
+        component:ListMatchesComponent
+      },{
+        path:'players',
+        component:ListPlayerComponent
+      },{
+        path:'tourns',
+        component:ListTournamentsComponent
+      },{
+        path:'trains',
+        component:ListTrainsComponent
+      },{
+        path:'manager-search',
+        component:LookForManagerComponent
+      },{
+        path:'manager',
+        component:ManagerDetailsComponent
+      },
+    ]
   },
 ];
