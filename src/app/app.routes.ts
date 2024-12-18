@@ -70,6 +70,8 @@ import {ConsultTrainingsComponent} from "./player/consult-trainings/consult-trai
 import {ContractManagementComponent} from "./player/contract-management/contract-management.component";
 import {SeeStatisticsComponent} from "./player/see-statistics/see-statistics.component";
 import {TeamConsultComponent} from "./player/team-consult/team-consult.component";
+import {ChangeLocationComponent} from "./supporter/change-location/change-location.component";
+import {ConsultTicketsComponent} from "./supporter/consult-tickets/consult-tickets.component";
 
 export const routes: Routes = [
   {
@@ -330,7 +332,18 @@ export const routes: Routes = [
   },{
     path:'supporter',
     component: SupporterComponent,
-    children:[]
+    children:[
+      {
+        path:'location',
+        component:ChangeLocationComponent
+      },{
+        path:'matches',
+        component:ConsultMatchesComponent
+      },{
+        path:'tickets',
+        component:ConsultTicketsComponent
+      },
+    ]
   },{
     path:'team',
     component: TeamComponent,
