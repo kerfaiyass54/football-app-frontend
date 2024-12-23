@@ -282,7 +282,7 @@ export const routes: Routes = [
         component: TeamStatsComponent
       },
       {
-        path:'Tournaments',
+        path:'tournaments',
         component: TournamentsManagementComponent
       },
       {

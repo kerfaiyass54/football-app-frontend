@@ -17,23 +17,23 @@ export class ManagerComponent {
   navBarElements: NavbarElement[]=[
     {
       name:'Careers information',
-      link:''
+      link:'/manager/career'
     },
     {
       name:'Tournaments information',
-      link:''
+      link:'/manager/tourns'
     },{
       name:'Matches schedule',
-      link:''
+      link:'/manager/match'
     },{
       name:'Players management',
-      link:''
+      link:'/manager/players'
     },{
       name:'Injuries information',
-      link:''
+      link:'/manager/injuries'
     },{
       name:'Team information',
-      link:''
+      link:'/manager/team'
     },
   ];
 
