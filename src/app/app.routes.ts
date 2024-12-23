@@ -36,9 +36,7 @@ import {TeamManagementComponent} from "./manager/team-management/team-management
 import {SetLineUpComponent} from "./manager/team-management/set-line-up/set-line-up.component";
 import {TeamResultsComponent} from "./manager/team-results/team-results.component";
 import {TrainingManagementComponent} from "./manager/training-management/training-management.component";
-import {
-  SetTrainingSessionComponent
-} from "./manager/training-management/set-training-session/set-training-session.component";
+import {SetTrainingSessionComponent} from "./manager/training-management/set-training-session/set-training-session.component";
 import {MatchesManagementComponent} from "./organizer/matches-management/matches-management.component";
 import {SetRatingsComponent} from "./organizer/matches-management/set-ratings/set-ratings.component";
 import {SetStadiumsComponent} from "./organizer/matches-management/set-stadiums/set-stadiums.component";

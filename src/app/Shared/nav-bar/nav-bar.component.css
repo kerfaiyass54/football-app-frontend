@@ -12,7 +12,7 @@ a{
   border: none;
   border-radius: 8px;
   color: #6A42C2;
-
+  transition: background-color 0.5s ease, transform 0.55s ease;
 }
 
 a:hover{
@@ -27,8 +27,14 @@ a:active{
 .navbar-brand{
   color: #563A9C;
   background-color: #50f36c;
+  transition: background-color 0.5s ease, transform 0.55s ease;
 }
 
 .navbar-brand:hover{
   background-color: #7be665;
+}
+
+
+.nav-item{
+  margin-left: 25px;
 }
