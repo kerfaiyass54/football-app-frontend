@@ -1,7 +1,7 @@
-# Vehicule rent - Frontend
+# Football app  - Frontend
 
 ## Introduction
-This is the frontend application for **Vehicule rent**, developed using **Angular**. It provides a user-friendly interface for managing and accessing the functionalities of the vehicule rental system.
+This is the frontend application for **Football app**, developed using **Angular**. It provides a user-friendly interface for managing and accessing the different fields for football such as teams, results, tournaments etc.
 
 ## Actors
 - **Admin**: Manages system users and existed locations.
