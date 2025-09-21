@@ -8,9 +8,9 @@ export class KeycloakService {
 
   constructor() {
     this.keycloak = new Keycloak({
-      url: 'http://localhost:8080',
-      realm: 'vehicule-app',
-      clientId: 'vehicule-rent'
+      url: 'http://localhost:7080',
+      realm: 'Football',
+      clientId: 'football-frontend'
     });
   }
 

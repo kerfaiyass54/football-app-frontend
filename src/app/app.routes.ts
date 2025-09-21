@@ -77,12 +77,31 @@ import {ListTournamentsComponent} from "./team/list-tournaments/list-tournaments
 import {ListTrainsComponent} from "./team/list-trains/list-trains.component";
 import {LookForManagerComponent} from "./team/look-for-manager/look-for-manager.component";
 import {ManagerDetailsComponent} from "./team/manager-details/manager-details.component";
+import {AdminHomeComponent} from "./admin/admin-home/admin-home.component";
+import {roleGuard} from "./Shared/services/guard/auth.guard";
+import {HomePageComponent} from "./home-page/home-page.component";
+import {NoAccessComponent} from "./no-access/no-access.component";
+import {RefereeComponent} from "./referee/referee.component";
 
 export const routes: Routes = [
   {
+    path:'',
+    component: HomePageComponent,
+    title: 'Welcome'
+  },{
+    path:'referee',
+    component: RefereeComponent,
+    title: 'Referee dashboard'
+  },
+  {
     path:'admin',
     component: AdminComponent,
+    title: 'Admin dashboard',
+    canActivate: [roleGuard], data: { roles: ['Admin'] },
     children:[ {
+      path:'',
+      component:AdminHomeComponent
+    },{
       path:'users',
       component:UserManagementComponent
     },{
@@ -372,9 +391,13 @@ export const routes: Routes = [
         path:'manager-search',
         component:LookForManagerComponent
       },{
-        path:'manager',
+        path:'manager-details',
         component:ManagerDetailsComponent
       },
     ]
+  },{
+    path:'not-authorized',
+    component: NoAccessComponent,
+    title:"Access required"
   },
 ];

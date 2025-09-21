@@ -6,14 +6,13 @@ export const roleGuard: CanActivateFn = async (route, state) => {
   const keycloak = inject(KeycloakService);
   const router = inject(Router);
 
-  // Check login
   const loggedIn = await keycloak.isLoggedIn();
   if (!loggedIn) {
     await keycloak.login();
     return false;
   }
 
-  // Check roles
+
   const requiredRoles = route.data['roles'] as string[];
   if (!requiredRoles || requiredRoles.length === 0) return true;
 
