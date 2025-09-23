@@ -88,10 +88,6 @@ export const routes: Routes = [
     path:'',
     component: HomePageComponent,
     title: 'Welcome'
-  },{
-    path:'referee',
-    component: RefereeComponent,
-    title: 'Referee dashboard'
   },
   {
     path:'admin',
@@ -395,6 +391,10 @@ export const routes: Routes = [
         component:ManagerDetailsComponent
       },
     ]
+  },{
+    path:'referee',
+    component: RefereeComponent,
+    title: 'Referee dashboard'
   },{
     path:'not-authorized',
     component: NoAccessComponent,
