@@ -114,6 +114,7 @@ export const routes: Routes = [
   {
     path:'builder',
     component: BuilderComponent,
+    canActivate: [roleGuard], data: { roles: ['Builder'] },
     children:[{
       path: 'fields',
       component: FieldsTrainManagementComponent
@@ -145,6 +146,7 @@ export const routes: Routes = [
   },{
     path:'manager',
     component: ManagerComponent,
+    canActivate: [roleGuard], data: { roles: ['Manager'] },
     children:[
       {
         path:'career',
@@ -227,6 +229,7 @@ export const routes: Routes = [
   },{
     path:'organizer',
     component: OrganizerComponent,
+    canActivate: [roleGuard], data: { roles: ['Organizer'] },
     children:[
       {
         path:'matches',
@@ -328,6 +331,7 @@ export const routes: Routes = [
   },{
     path:'player',
     component: PlayerComponent,
+    canActivate: [roleGuard], data: { roles: ['Player'] },
     children:[
       {
         path:'matches',
@@ -352,6 +356,7 @@ export const routes: Routes = [
   },{
     path:'supporter',
     component: SupporterComponent,
+    canActivate: [roleGuard], data: { roles: ['Supporter'] },
     children:[
       {
         path:'location',
@@ -367,6 +372,7 @@ export const routes: Routes = [
   },{
     path:'team',
     component: TeamComponent,
+    canActivate: [roleGuard], data: { roles: ['Team'] },
     children:[
       {
         path:'transfer',
@@ -394,7 +400,8 @@ export const routes: Routes = [
   },{
     path:'referee',
     component: RefereeComponent,
-    title: 'Referee dashboard'
+    title: 'Referee dashboard',
+    canActivate: [roleGuard], data: { roles: ['Referee'] },
   },{
     path:'not-authorized',
     component: NoAccessComponent,
