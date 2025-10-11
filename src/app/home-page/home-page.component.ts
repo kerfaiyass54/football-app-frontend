@@ -18,6 +18,8 @@ export class HomePageComponent implements OnInit{
 
 
   ngOnInit() {
+    this.roles = this.keyloak.getRoles();
+    console.log(this.roles);
     this.access();}
 
   access(){
@@ -47,7 +49,6 @@ export class HomePageComponent implements OnInit{
     }else if(this.roles.includes('Builder')){
       this.router.navigate(['/builder']);
     }
-
     else{
       this.router.navigate(['/not-authorized']);
     }
