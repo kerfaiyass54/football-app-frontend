@@ -1,13 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgClass, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {NavbarElement} from "../../Models/navbar-element";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
     NgClass,
-    NgIf
+    NgIf,
+    RouterLink,
+    NgForOf
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
