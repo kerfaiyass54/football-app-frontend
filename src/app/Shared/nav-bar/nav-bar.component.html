@@ -1,16 +1,31 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Football app</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul *ngFor="let el of element" class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="{{el.link}}">{{el.name}}</a>
-        </li>
-      </ul>
+<nav [class.scrolled]="isScrolled" class="navbar navbar-expand-lg bg-body-tertiar">
+  <div class="navbar-container">
+    <div class="navbar-content">
+      <a href="#" class="navbar-logo">My App</a>
 
+      <div class="navbar-links">
+        <a href="#home" class="navbar-link">Home</a>
+        <a href="#about" class="navbar-link">About</a>
+        <a href="#services" class="navbar-link">Services</a>
+        <a href="#contact" class="navbar-link">Contact</a>
+      </div>
+
+      <div class="navbar-actions">
+        <select
+          [value]="language"
+          (change)="changeLanguage($event)"
+          class="navbar-select">
+          <option value="EN">English</option>
+          <option value="ES">Español</option>
+          <option value="FR">Français</option>
+          <option value="DE">Deutsch</option>
+        </select>
+
+        <button (click)="logout()" class="navbar-logout">
+          <i class="lucide lucide-log-out"></i> Logout</button>
+      </div>
     </div>
+
+
   </div>
 </nav>
