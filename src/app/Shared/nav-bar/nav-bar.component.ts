@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {NavbarElement} from "../../Models/navbar-element";
 import {RouterLink} from "@angular/router";
+import {KeycloakService} from "../services/keycloak.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,9 +17,17 @@ import {RouterLink} from "@angular/router";
   styleUrl: './nav-bar.component.css'
 })
 
-export class NavBarComponent{
+export class NavBarComponent implements OnInit{
 
-   @Input() element: NavbarElement[] = [];
+
+  constructor(private authService: KeycloakService) {
+  }
+
+  ngOnInit() {
+
+  }
+
+  @Input() element: NavbarElement[] = [];
 
 
   isScrolled = false;
@@ -27,17 +36,13 @@ export class NavBarComponent{
 
 
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
   changeLanguage(event: Event): void {
     const select = event.target as HTMLSelectElement;
     this.language = select.value;
   }
 
   logout(): void {
-    console.log('Logout');
+    this.authService.logout();
   }
 
 
