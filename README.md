@@ -27,7 +27,9 @@ This is the frontend application for **Football app**, developed by using **Angu
 - HTML/CSS/Typescript
 - Keycloak
 - Docker
+
 Make sure that you have those technologies in your pc.
+
  <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a>
  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
  <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a>
@@ -50,4 +52,5 @@ Make sure that you have those technologies in your pc.
 4. **Access the application**:à
    ```bash
    localhost:4200
+
 
