@@ -8,8 +8,6 @@ import {KeycloakService} from "../services/keycloak.service";
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    NgClass,
-    NgIf,
     RouterLink,
     NgForOf
   ],
@@ -44,6 +42,8 @@ export class NavBarComponent implements OnInit{
   logout(): void {
     this.authService.logout();
   }
+
+
 
 
 

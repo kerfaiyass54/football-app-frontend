@@ -24,7 +24,7 @@
           <option value="AR">Arabic</option>
         </select>
 
-        <button (click)="logout()" class="navbar-logout">
+        <button class="navbar-logout" data-bs-toggle="modal" data-bs-target="#confirmLogout">
           <i class="lucide lucide-log-out"></i> Logout</button>
       </div>
     </div>
@@ -32,3 +32,22 @@
 
   </div>
 </nav>
+
+
+<div class="modal fade" id="confirmLogout" tabindex="-1" aria-labelledby="confirmLogoutLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="confirmLogoutLabel">Confirm logout</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to get out of this app?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" (click)="logout()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
