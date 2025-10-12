@@ -1,7 +1,7 @@
 # Football app  - Frontend
 
 ## Introduction
-This is the frontend application for **Football app**, developed using **Angular**. It provides a user-friendly interface for managing and accessing the different fields for football such as teams, results, tournaments etc.
+This is the frontend application for **Football app**, developed by using **Angular**. It provides a user-friendly interface for managing and accessing the different fields for football such as teams, results, tournaments etc.
 
 ## Actors
 - **Admin**: Manages system users and existed locations.
@@ -10,6 +10,8 @@ This is the frontend application for **Football app**, developed using **Angular
 - **Supporter**: Books and tracks matches tickets and he can also see thee results.
 - **Organizer**: Manages the tournaments and the matches.
 - **Builder**: Manages the stadium's building.
+- **Referee**: Manages his own matches information and see the upcoming ones.
+- **Team**: Manages his own players, trainings and matches.
 
 ## File Descriptions
 - `src/app`: Contains the main Angular components, services, and modules.
@@ -23,12 +25,17 @@ This is the frontend application for **Football app**, developed using **Angular
 - Angular: v17.2.2
 - Bootstrap: v5.3
 - HTML/CSS/Typescript
+- Keycloak
+- Docker
+
 Make sure that you have those technologies in your pc.
 
+ <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a>
+ <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
+ <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a>
+ <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a>
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white). ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white). ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
-## How to Upload and Run It
+## How to Upload and Run It (Do not forget to run the containers that are in the docker-compose.yaml file in the backend)
 
 1. **Clone this repository**:
    ```bash
@@ -42,6 +49,8 @@ Make sure that you have those technologies in your pc.
    ```bash
    ng serve
 
-4. **Access the application**:
+4. **Access the application**:à
    ```bash
    localhost:4200
+
+
