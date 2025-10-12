@@ -29,7 +29,6 @@ export class NavBarComponent implements OnInit{
 
 
   isScrolled = false;
-  isMenuOpen = false;
   language = 'EN';
 
 
