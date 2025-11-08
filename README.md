@@ -6,7 +6,7 @@ This is the frontend application for **Football app**, developed by using **Angu
 ## Actors
 - **Admin**: Manages system users and existed locations.
 - **Manager**: Manages his team (training, lineup, results..) and sees the upcoming matches.
-- **Player**: Sees his stats, if he is in the lineup and consults the contracts and transfer offers.
+- **Player**: Sees his stats and if he is in the lineup or not and also he can manage the contracts and transfer offers.
 - **Supporter**: Books and tracks matches tickets and he can also see thee results.
 - **Organizer**: Manages the tournaments and the matches.
 - **Builder**: Manages the stadium's building.
@@ -52,5 +52,6 @@ Make sure that you have those technologies in your pc.
 4. **Access the application**:à
    ```bash
    localhost:4200
+
 
 
