@@ -93,7 +93,7 @@ export const routes: Routes = [
     path:'admin',
     component: AdminComponent,
     title: 'Admin dashboard',
-    canActivate: [roleGuard], data: { roles: ['Admin'] },
+    canActivate: [roleGuard], data: { roles: ['admin'] },
     children:[ {
       path:'',
       component:AdminHomeComponent
