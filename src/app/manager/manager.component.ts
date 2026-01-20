@@ -4,14 +4,13 @@ import {RouterOutlet} from "@angular/router";
 import {NavbarElement} from "../Models/navbar-element";
 
 @Component({
-  selector: 'app-manager',
-  standalone: true,
+    selector: 'app-manager',
     imports: [
         NavBarComponent,
         RouterOutlet
     ],
-  templateUrl: './manager.component.html',
-  styleUrl: './manager.component.css'
+    templateUrl: './manager.component.html',
+    styleUrl: './manager.component.css'
 })
 export class ManagerComponent {
   navBarElements: NavbarElement[]=[

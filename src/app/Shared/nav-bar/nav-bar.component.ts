@@ -5,14 +5,13 @@ import {RouterLink} from "@angular/router";
 import {KeycloakService} from "../services/keycloak.service";
 
 @Component({
-  selector: 'app-nav-bar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    NgForOf
-  ],
-  templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+    selector: 'app-nav-bar',
+    imports: [
+        RouterLink,
+        NgForOf
+    ],
+    templateUrl: './nav-bar.component.html',
+    styleUrl: './nav-bar.component.css'
 })
 
 export class NavBarComponent implements OnInit{

@@ -4,14 +4,13 @@ import {RouterOutlet} from "@angular/router";
 import {NavbarElement} from "../Models/navbar-element";
 
 @Component({
-  selector: 'app-organizer',
-  standalone: true,
+    selector: 'app-organizer',
     imports: [
         NavBarComponent,
         RouterOutlet
     ],
-  templateUrl: './organizer.component.html',
-  styleUrl: './organizer.component.css'
+    templateUrl: './organizer.component.html',
+    styleUrl: './organizer.component.css'
 })
 export class OrganizerComponent {
   navBarElements: NavbarElement[] = [{

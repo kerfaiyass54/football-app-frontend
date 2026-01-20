@@ -4,14 +4,13 @@ import {RouterOutlet} from "@angular/router";
 import {NavbarElement} from "../Models/navbar-element";
 
 @Component({
-  selector: 'app-player',
-  standalone: true,
-  imports: [
-    NavBarComponent,
-    RouterOutlet
-  ],
-  templateUrl: './player.component.html',
-  styleUrl: './player.component.css'
+    selector: 'app-player',
+    imports: [
+        NavBarComponent,
+        RouterOutlet
+    ],
+    templateUrl: './player.component.html',
+    styleUrl: './player.component.css'
 })
 export class PlayerComponent {
   navBarElements: NavbarElement[] = [{

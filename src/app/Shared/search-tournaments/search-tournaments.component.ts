@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-search-tournaments',
-  standalone: true,
-  imports: [],
-  templateUrl: './search-tournaments.component.html',
-  styleUrl: './search-tournaments.component.css'
+    selector: 'app-search-tournaments',
+    imports: [],
+    templateUrl: './search-tournaments.component.html',
+    styleUrl: './search-tournaments.component.css'
 })
 export class SearchTournamentsComponent {
 

@@ -4,14 +4,13 @@ import {RouterOutlet} from "@angular/router";
 import {NavbarElement} from "../Models/navbar-element";
 
 @Component({
-  selector: 'app-supporter',
-  standalone: true,
+    selector: 'app-supporter',
     imports: [
         NavBarComponent,
         RouterOutlet
     ],
-  templateUrl: './supporter.component.html',
-  styleUrl: './supporter.component.css'
+    templateUrl: './supporter.component.html',
+    styleUrl: './supporter.component.css'
 })
 export class SupporterComponent {
   navBarElements: NavbarElement[]=[
