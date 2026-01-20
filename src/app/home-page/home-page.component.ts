@@ -23,29 +23,29 @@ export class HomePageComponent implements OnInit{
 
   access(){
 
-    if(this.roles.includes('Admin')){
+    if(this.roles.includes('admin')){
       this.router.navigate(['/admin']);
     }
-    else if(this.roles.includes('Supporter')){
+    else if(this.roles.includes('supporter')){
       this.router.navigate(['/supporter']);
     }
 
-    else if(this.roles.includes('Team')){
+    else if(this.roles.includes('team')){
       this.router.navigate(['/team']);
     }
 
-    else if(this.roles.includes('Player')){
+    else if(this.roles.includes('player')){
       this.router.navigate(['/player']);
     }
-    else if(this.roles.includes('Organizer')){
+    else if(this.roles.includes('organizer')){
       this.router.navigate(['/organizer']);
     }
-    else if(this.roles.includes('Referee')){
+    else if(this.roles.includes('referee')){
       this.router.navigate(['/referee']);
     }
-    else if(this.roles.includes('Manager')){
+    else if(this.roles.includes('manager')){
       this.router.navigate(['/manager']);
-    }else if(this.roles.includes('Builder')){
+    }else if(this.roles.includes('builder')){
       this.router.navigate(['/builder']);
     }
     else{
