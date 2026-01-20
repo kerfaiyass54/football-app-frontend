@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection } from "@angular/core";
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { AppComponent } from './app/app.component';
@@ -14,7 +15,7 @@ const keycloakService = new KeycloakService();
 keycloakService.init().then(() => {
   bootstrapApplication(AppComponent, {
     providers: [
-      provideRouter(routes),provideHttpClient(),provideAnimations(),
+      provideZoneChangeDetection(),provideRouter(routes),provideHttpClient(),provideAnimations(),
       { provide: KeycloakService, useValue: keycloakService }
     ]
   }).catch(err => console.error(err));

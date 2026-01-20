@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import { NgClass } from "@angular/common";
 import {NavbarElement} from "../../Models/navbar-element";
 import {RouterLink} from "@angular/router";
 import {KeycloakService} from "../services/keycloak.service";
@@ -7,9 +7,8 @@ import {KeycloakService} from "../services/keycloak.service";
 @Component({
     selector: 'app-nav-bar',
     imports: [
-        RouterLink,
-        NgForOf
-    ],
+    RouterLink
+],
     templateUrl: './nav-bar.component.html',
     styleUrl: './nav-bar.component.css'
 })
