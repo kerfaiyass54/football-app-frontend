@@ -87,324 +87,327 @@ export const routes: Routes = [
   {
     path:'',
     component: HomePageComponent,
-    title: 'Welcome'
-  },
-  {
-    path:'admin',
-    component: AdminComponent,
-    title: 'Admin dashboard',
-    canActivate: [roleGuard], data: { roles: ['admin'] },
-    children:[ {
-      path:'',
-      component:AdminHomeComponent
-    },{
-      path:'users',
-      component:UserManagementComponent
-    },{
-      path:'locations',
-      component:LocationManagementComponent
-    },{
-      path:'add-location',
-      component:AddLocationComponent
-    },{
-      path:'details-location/:id',
-      component:DetailsLocationComponent
-    }]
-  },
-  {
-    path:'builder',
-    component: BuilderComponent,
-    canActivate: [roleGuard], data: { roles: ['Builder'] },
-    children:[{
-      path: 'fields',
-      component: FieldsTrainManagementComponent
-    },
+    title: 'Home page',
+    children: [
       {
-        path: 'add-field',
-        component: AddFieldComponent
+        path:'admin',
+        component: AdminComponent,
+        title: 'Admin dashboard',
+        canActivate: [roleGuard], data: { roles: ['admin'] },
+        children:[ {
+          path:'',
+          component:AdminHomeComponent
+        },{
+          path:'users',
+          component:UserManagementComponent
+        },{
+          path:'locations',
+          component:LocationManagementComponent
+        },{
+          path:'add-location',
+          component:AddLocationComponent
+        },{
+          path:'details-location/:id',
+          component:DetailsLocationComponent
+        }]
       },
       {
-        path: 'details-field/:id',
-        component: FieldsDetailsComponent
+        path:'builder',
+        component: BuilderComponent,
+        canActivate: [roleGuard], data: { roles: ['Builder'] },
+        children:[{
+          path: 'fields',
+          component: FieldsTrainManagementComponent
+        },
+          {
+            path: 'add-field',
+            component: AddFieldComponent
+          },
+          {
+            path: 'details-field/:id',
+            component: FieldsDetailsComponent
+          },{
+            path: 'upgrade/:id',
+            component: MakeUpgradeComponent
+          },{
+            path:'stadiums',
+            component: StadiumsManagementComponent
+          },
+          {
+            path: 'build-stadium',
+            component: BuildStadiumComponent
+          },{
+            path:'details-stadium/:id',
+            component: DetailsStadiumComponent
+          },{
+            path:'upgrade/:id',
+            component: UpgradeStadiumComponent
+          }]
       },{
-        path: 'upgrade/:id',
-        component: MakeUpgradeComponent
-      },{
-        path:'stadiums',
-        component: StadiumsManagementComponent
-      },
-      {
-        path: 'build-stadium',
-        component: BuildStadiumComponent
-      },{
-        path:'details-stadium/:id',
-        component: DetailsStadiumComponent
-      },{
-        path:'upgrade/:id',
-        component: UpgradeStadiumComponent
-      }]
-  },{
-    path:'manager',
-    component: ManagerComponent,
-    canActivate: [roleGuard], data: { roles: ['Manager'] },
-    children:[
-      {
-        path:'career',
-        component: CareerManagementComponent
-      },
-      {
-        path:'add-career',
-        component: AddCareerComponent
-      },
-      {
-        path: 'career-details/:id',
-        component: CareerDetailsComponent
-      },
-      {
-        path:'tournament/:id',
-        component: TournamentDetailsComponent
-      },
-      {
-        path:'tourns',
-        component: ConsultTournamentComponent
-      },
-      {
-        path:'match',
-        component: MatchManagementComponent
-      },
-      {
-        path:'match/:id',
-        component: MatchDetailsComponent
-      },
-      {
-        path:'players',
-        component: PlayerManagementComponent
-      },
-      {
-        path:'details-player/:id',
-        component: PlayerDetailsComponent
-      },
-      {
-        path:'update-player/:id',
-        component: UpdatePlayerComponent
-      },
-      {
-        path:'transfers',
-        component: PlayerTransferComponent
-      },
-      {
-        path:'transfer-adjust/:id',
-        component: TransferAdjustComponent
-      },
-      {
-        path:'transfer/:id',
-        component: TransferDetailComponent
-      },
-      {
-        path:'injuries',
-        component: SeeInjuriesComponent
-      },
-      {
-        path:'team',
-        component: TeamManagementComponent
-      },
-      {
-        path:'lineup',
-        component: SetLineUpComponent
-      },
-      {
-        path:'results/:id',
-        component: TeamResultsComponent
-      },
-      {
-        path:'training/:id',
-        component: TrainingManagementComponent
-      },
-      {
-        path:'session/:id',
-        component: SetTrainingSessionComponent
-      }
+        path:'manager',
+        component: ManagerComponent,
+        canActivate: [roleGuard], data: { roles: ['Manager'] },
+        children:[
+          {
+            path:'career',
+            component: CareerManagementComponent
+          },
+          {
+            path:'add-career',
+            component: AddCareerComponent
+          },
+          {
+            path: 'career-details/:id',
+            component: CareerDetailsComponent
+          },
+          {
+            path:'tournament/:id',
+            component: TournamentDetailsComponent
+          },
+          {
+            path:'tourns',
+            component: ConsultTournamentComponent
+          },
+          {
+            path:'match',
+            component: MatchManagementComponent
+          },
+          {
+            path:'match/:id',
+            component: MatchDetailsComponent
+          },
+          {
+            path:'players',
+            component: PlayerManagementComponent
+          },
+          {
+            path:'details-player/:id',
+            component: PlayerDetailsComponent
+          },
+          {
+            path:'update-player/:id',
+            component: UpdatePlayerComponent
+          },
+          {
+            path:'transfers',
+            component: PlayerTransferComponent
+          },
+          {
+            path:'transfer-adjust/:id',
+            component: TransferAdjustComponent
+          },
+          {
+            path:'transfer/:id',
+            component: TransferDetailComponent
+          },
+          {
+            path:'injuries',
+            component: SeeInjuriesComponent
+          },
+          {
+            path:'team',
+            component: TeamManagementComponent
+          },
+          {
+            path:'lineup',
+            component: SetLineUpComponent
+          },
+          {
+            path:'results/:id',
+            component: TeamResultsComponent
+          },
+          {
+            path:'training/:id',
+            component: TrainingManagementComponent
+          },
+          {
+            path:'session/:id',
+            component: SetTrainingSessionComponent
+          }
 
-    ]
-  },{
-    path:'organizer',
-    component: OrganizerComponent,
-    canActivate: [roleGuard], data: { roles: ['Organizer'] },
-    children:[
-      {
-        path:'matches',
-        component:MatchesManagementComponent
-      },
-      {
-        path:'ratings:/id',
-        component: SetRatingsComponent
-      },
-      {
-        path:'stadium/:id',
-        component: SetStadiumsComponent
-      },
-      {
-        path:'tickets/:id',
-        component: SetTicketsComponent
-      },
-      {
-        path: 'view-stats/:id',
-        component: ViewStatsComponent
-      },
-      {
-        path:'referees',
-        component: RefereeManagementComponent
-      },
-      {
-        path:'add-ref',
-        component: AddRefereeComponent
-      },
-      {
-        path:'appoint/:id',
-        component: AppointRefereeComponent
-      },
-      {
-        path:'consult/:id',
-        component: ConsultRefereeComponent
-      },
-      {
-        path:'tournament-edition',
-        component: TournamentEditionsComponent
-      },
-      {
-        path:'add-edition',
-        component: AddEditionComponent
-      },
-      {
-        path:'stats/:id',
-        component: BestStatsComponent
-      },
-      {
-        path:'consult-edition/:id',
-        component: ConsultEditionComponent
-      },
-      {
-        path:'stats-group/:id',
-        component: GroupStatsComponent
-      },
-      {
-        path:'player-stats/:id',
-        component: PlayerStatsComponent
-      },
-      {
-        path:'set-results/:id',
-        component: SetResultsComponent
-      },
-      {
-        path:'team-stats/:id',
-        component: TeamStatsComponent
-      },
-      {
-        path:'tournaments',
-        component: TournamentsManagementComponent
-      },
-      {
-        path:'stats/:id',
-        component:GeneralStatsComponent
-      },
-      {
-        path:'rules/:id',
-        component:SetRulesComponent
-      },
-      {
-        path:'view/:id',
-        component:ViewTournamentComponent
+        ]
       },{
-        path:'teams',
-        component:ViewTeamsComponent
+        path:'organizer',
+        component: OrganizerComponent,
+        canActivate: [roleGuard], data: { roles: ['Organizer'] },
+        children:[
+          {
+            path:'matches',
+            component:MatchesManagementComponent
+          },
+          {
+            path:'ratings:/id',
+            component: SetRatingsComponent
+          },
+          {
+            path:'stadium/:id',
+            component: SetStadiumsComponent
+          },
+          {
+            path:'tickets/:id',
+            component: SetTicketsComponent
+          },
+          {
+            path: 'view-stats/:id',
+            component: ViewStatsComponent
+          },
+          {
+            path:'referees',
+            component: RefereeManagementComponent
+          },
+          {
+            path:'add-ref',
+            component: AddRefereeComponent
+          },
+          {
+            path:'appoint/:id',
+            component: AppointRefereeComponent
+          },
+          {
+            path:'consult/:id',
+            component: ConsultRefereeComponent
+          },
+          {
+            path:'tournament-edition',
+            component: TournamentEditionsComponent
+          },
+          {
+            path:'add-edition',
+            component: AddEditionComponent
+          },
+          {
+            path:'stats/:id',
+            component: BestStatsComponent
+          },
+          {
+            path:'consult-edition/:id',
+            component: ConsultEditionComponent
+          },
+          {
+            path:'stats-group/:id',
+            component: GroupStatsComponent
+          },
+          {
+            path:'player-stats/:id',
+            component: PlayerStatsComponent
+          },
+          {
+            path:'set-results/:id',
+            component: SetResultsComponent
+          },
+          {
+            path:'team-stats/:id',
+            component: TeamStatsComponent
+          },
+          {
+            path:'tournaments',
+            component: TournamentsManagementComponent
+          },
+          {
+            path:'stats/:id',
+            component:GeneralStatsComponent
+          },
+          {
+            path:'rules/:id',
+            component:SetRulesComponent
+          },
+          {
+            path:'view/:id',
+            component:ViewTournamentComponent
+          },{
+            path:'teams',
+            component:ViewTeamsComponent
+          },{
+            path:'add-team',
+            component:AddTeamComponent
+          },{
+            path:'view-team/:id',
+            component:ViewTeamComponent
+          },{
+            path:'update-team/:id',
+            component:UpdateTeamComponent
+          },
+        ]
       },{
-        path:'add-team',
-        component:AddTeamComponent
+        path:'player',
+        component: PlayerComponent,
+        canActivate: [roleGuard], data: { roles: ['Player'] },
+        children:[
+          {
+            path:'matches',
+            component:ConsultMatchesComponent
+          },{
+            path:'ratings',
+            component:ConsultRatingsComponent
+          },{
+            path:'trainings',
+            component:ConsultTrainingsComponent
+          },{
+            path:'contracts',
+            component:ContractManagementComponent
+          },{
+            path:'stats',
+            component:SeeStatisticsComponent
+          },{
+            path:'team',
+            component:TeamConsultComponent
+          }
+        ]
       },{
-        path:'view-team/:id',
-        component:ViewTeamComponent
-      },{
-        path:'update-team/:id',
-        component:UpdateTeamComponent
-      },
-      ]
-  },{
-    path:'player',
-    component: PlayerComponent,
-    canActivate: [roleGuard], data: { roles: ['Player'] },
-    children:[
-      {
-        path:'matches',
-        component:ConsultMatchesComponent
-      },{
-        path:'ratings',
-        component:ConsultRatingsComponent
-      },{
-        path:'trainings',
-        component:ConsultTrainingsComponent
-      },{
-        path:'contracts',
-        component:ContractManagementComponent
-      },{
-        path:'stats',
-        component:SeeStatisticsComponent
+        path:'supporter',
+        component: SupporterComponent,
+        canActivate: [roleGuard], data: { roles: ['Supporter'] },
+        children:[
+          {
+            path:'location',
+            component:ChangeLocationComponent
+          },{
+            path:'matches',
+            component:ConsultMatchesComponent
+          },{
+            path:'tickets',
+            component:ConsultTicketsComponent
+          },
+        ]
       },{
         path:'team',
-        component:TeamConsultComponent
+        component: TeamComponent,
+        canActivate: [roleGuard], data: { roles: ['Team'] },
+        children:[
+          {
+            path:'transfer',
+            component: AskForTransferComponent
+          },{
+            path:'matches',
+            component:ListMatchesComponent
+          },{
+            path:'players',
+            component:ListPlayerComponent
+          },{
+            path:'tourns',
+            component:ListTournamentsComponent
+          },{
+            path:'trains',
+            component:ListTrainsComponent
+          },{
+            path:'manager-search',
+            component:LookForManagerComponent
+          },{
+            path:'manager-details',
+            component:ManagerDetailsComponent
+          },
+        ]
+      },{
+        path:'referee',
+        component: RefereeComponent,
+        title: 'Referee dashboard',
+        canActivate: [roleGuard], data: { roles: ['Referee'] },
+      },{
+        path:'not-authorized',
+        component: NoAccessComponent,
+        title:"Access required"
       }
     ]
-  },{
-    path:'supporter',
-    component: SupporterComponent,
-    canActivate: [roleGuard], data: { roles: ['Supporter'] },
-    children:[
-      {
-        path:'location',
-        component:ChangeLocationComponent
-      },{
-        path:'matches',
-        component:ConsultMatchesComponent
-      },{
-        path:'tickets',
-        component:ConsultTicketsComponent
-      },
-    ]
-  },{
-    path:'team',
-    component: TeamComponent,
-    canActivate: [roleGuard], data: { roles: ['Team'] },
-    children:[
-      {
-        path:'transfer',
-        component: AskForTransferComponent
-      },{
-        path:'matches',
-        component:ListMatchesComponent
-      },{
-        path:'players',
-        component:ListPlayerComponent
-      },{
-        path:'tourns',
-        component:ListTournamentsComponent
-      },{
-        path:'trains',
-        component:ListTrainsComponent
-      },{
-        path:'manager-search',
-        component:LookForManagerComponent
-      },{
-        path:'manager-details',
-        component:ManagerDetailsComponent
-      },
-    ]
-  },{
-    path:'referee',
-    component: RefereeComponent,
-    title: 'Referee dashboard',
-    canActivate: [roleGuard], data: { roles: ['Referee'] },
-  },{
-    path:'not-authorized',
-    component: NoAccessComponent,
-    title:"Access required"
-  },
+  }
+
 ];

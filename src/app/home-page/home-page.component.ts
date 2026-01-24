@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {KeycloakService} from "../Shared/services/keycloak.service";
-import {Router} from "@angular/router";
+import {Router, RouterOutlet} from "@angular/router";
 
 @Component({
     selector: 'app-home-page',
-    imports: [],
+  imports: [
+    RouterOutlet
+  ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css'
 })
