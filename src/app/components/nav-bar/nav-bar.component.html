@@ -1,43 +1,27 @@
 <nav class="navbar" [class.open]="isMenuOpen">
   <!-- Left -->
   <div class="nav-left">
-    <button class="burger" (click)="toggleMenu()"></button>
-    <h1>FTM</h1>
+    <button class="burger" (click)="toggleMenu()"><h1>FTM</h1></button>
+
   </div>
 
-  <!-- Center -->
   <div class="dropdowns">
     <div class="dropdown">
       <button (click)="toggleDropdown(0)">
         Services
       </button>
-      <div class="dropdown-menu" [class.open]="openDropdown === 0">
-        <button>UX/UI Design</button>
-        <button>Web Applications</button>
-        <button>SEO Advice</button>
-      </div>
     </div>
 
     <div class="dropdown">
       <button (click)="toggleDropdown(1)">
         Products
       </button>
-      <div class="dropdown-menu" [class.open]="openDropdown === 1">
-        <button>Learn CSS Ebook</button>
-        <button>Security Course</button>
-        <button>Masterclass Bundle</button>
-      </div>
     </div>
 
     <div class="dropdown">
       <button (click)="toggleDropdown(2)">
         Support
       </button>
-      <div class="dropdown-menu" [class.open]="openDropdown === 2">
-        <button>Live Chat</button>
-        <button>Send Email</button>
-        <button>Request Help</button>
-      </div>
     </div>
   </div>
 
