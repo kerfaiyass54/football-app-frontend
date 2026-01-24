@@ -14,14 +14,6 @@ import {RouterOutlet} from "@angular/router";
 })
 export class AdminComponent {
 
-  navBarElements: NavbarElement[] = [
-    {
-      name:'Users management',
-      link:'/admin/users'
-    },{
-    name:'Locations management',
-      link:'/admin/locations'
-    }
-  ];
+
 
 }

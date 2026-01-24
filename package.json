@@ -22,6 +22,8 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.13.1",
     "keycloak-js": "^25.0.0",
+    "primeflex": "^4.0.0",
+    "primeicons": "^7.0.0",
     "primeng": "^21.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -38,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-zorro-antd": "^21.0.2",
     "typescript": "^5.9.3"
   }
 }
