@@ -3,13 +3,15 @@ import {KeycloakService} from "../Shared/services/keycloak.service";
 import {Router, RouterOutlet} from "@angular/router";
 import {NavBarComponent} from "../components/nav-bar/nav-bar.component";
 import {Button} from "primeng/button";
+import {TableComponent} from "../components/table/table.component";
 
 @Component({
     selector: 'app-home-page',
   standalone: true,
   imports: [
     RouterOutlet,
-    NavBarComponent
+    NavBarComponent,
+    TableComponent
   ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css'

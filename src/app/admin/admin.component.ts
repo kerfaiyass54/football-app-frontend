@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
-import {NavbarElement} from "../Models/navbar-element";
-import {NavBarComponent} from "../Shared/nav-bar/nav-bar.component";
 import {RouterOutlet} from "@angular/router";
+import {NavBarComponent} from "../components/nav-bar/nav-bar.component";
 
 @Component({
     selector: 'app-admin',
-    imports: [
-        NavBarComponent,
-        RouterOutlet
-    ],
+  imports: [
+    NavBarComponent,
+    RouterOutlet,
+    NavBarComponent
+  ],
     templateUrl: './admin.component.html',
     styleUrl: './admin.component.css'
 })
 export class AdminComponent {
 
+  navbarElements = [
+    {index: 0, label: 'Users', link: '/admin/users'},
+    {index: 1, label: 'Locations', link: '/admin/locations'}
+  ]
 
 
 }

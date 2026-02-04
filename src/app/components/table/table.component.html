@@ -1,0 +1,84 @@
+<div class="card">
+  <h2>Customer's Orders</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th (click)="sortBy('id')">
+        ID
+        <span *ngIf="sortColumn === 'id'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+
+      <th (click)="sortBy('customer')">
+        Customer
+        <span *ngIf="sortColumn === 'customer'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+
+      <th (click)="sortBy('location')">
+        Location
+        <span *ngIf="sortColumn === 'location'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+
+      <th (click)="sortBy('orderDate')">
+        Order Date
+        <span *ngIf="sortColumn === 'orderDate'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+
+      <th (click)="sortBy('status')">
+        Status
+        <span *ngIf="sortColumn === 'status'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+
+      <th class="amount" (click)="sortBy('amount')">
+        Amount
+        <span *ngIf="sortColumn === 'amount'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr
+      *ngFor="let order of paginatedOrders"
+      @rowAnimation>
+      <td>{{ order.id }}</td>
+      <td class="customer">{{ order.customer }}</td>
+      <td>{{ order.location }}</td>
+      <td>{{ order.orderDate }}</td>
+      <td>
+          <span class="status" [ngClass]="order.status.toLowerCase()">
+            {{ order.status }}
+          </span>
+      </td>
+      <td class="amount">
+        ${{ order.amount | number:'1.2-2' }}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">‹</button>
+
+    <button
+      *ngFor="let _ of [].constructor(totalPages); let i = index"
+      (click)="changePage(i + 1)"
+      [class.active]="currentPage === i + 1">
+      {{ i + 1 }}
+    </button>
+
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">›</button>
+  </div>
+</div>

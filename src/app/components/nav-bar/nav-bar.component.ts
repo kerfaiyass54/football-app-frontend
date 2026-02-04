@@ -1,15 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {NavBarElement} from "../models/NavBarElement";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
+  imports: [
+    RouterLink
+  ]
 })
 export class NavBarComponent {
   isMenuOpen = false;
   openDropdown: number | null = null;
   accountOpen = false;
+  @Input() elements: any[] = [];
+  @Input() homepage: any = '';
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
