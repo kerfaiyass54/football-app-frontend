@@ -28,13 +28,13 @@ This is a comprehensive Angular application designed to provide a user-friendly 
 - **Frameworks**: Angular
 - **Libraries**: Bootstrap, Bootstrap Icons, Keycloak
 - **Tools**: Docker, Karma, Jasmine
-- **System Requirements**: Node.js v18.16.0, Angular v17.2.2
+- **System Requirements**: Node.js v18.16.0,  v17.2.2
 
 ## 📦 Installation
 
 ### Prerequisites
 - Node.js v18.16.0
-- Angular CLI v17.2.2
+- Angular CLI v21
 - Docker (if applicable)
 
 ### Quick Start
@@ -104,3 +104,4 @@ We welcome contributions! Here's how you can get started:
 - Include relevant badges (build status, version, license, etc.)
 - Make installation instructions copy-pasteable
 - Focus on clarity and developer experience
+
