@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class LocationManagementComponent {
 
+  labels: any[] = ['All' , 'Africa' , 'Asia' , 'Europe' ,'America' ,'South america']
+
 }
