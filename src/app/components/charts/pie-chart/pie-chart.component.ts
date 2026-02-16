@@ -33,7 +33,7 @@ export class PieChartComponent implements OnInit {
         labels: this.labels,
         datasets: [
           {
-            data: this.labels,
+            data: this.dataset,
             backgroundColor: this.colors,
             hoverBackgroundColor: this.colors
           }
