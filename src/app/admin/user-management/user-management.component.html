@@ -1,1 +1,16 @@
-<p>user-management works!</p>
+<div class="page-wrapper">
+  <div class="role-section">
+    <h2 class="section-title">Select Role Type</h2>
+    <p class="section-subtitle">
+      Choose the category you want to manage
+    </p>
+
+    <div class="hover-card">
+      @for(label of labels; track $index){
+        <div class="panel">
+          <span>{{ label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

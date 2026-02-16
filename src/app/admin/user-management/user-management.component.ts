@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class UserManagementComponent {
 
+  labels: any[] = ['Players','Managers','Teams','Organizer','Referee','Supporter','Builder'];
+
+
 }
