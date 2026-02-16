@@ -1,6 +1,18 @@
-<app-pie-chart [title]="'User chart'" [subtitle]="'Number of users per role'" [dataset]="dataset" [labels]="labels" [colors]="colors">
+<div class="container-fluid">
 
-</app-pie-chart>
+  <h1 class="text-center">Welcome to the app, admin!</h1>
+  <h3 class="text-center">Here are your stats</h3>
 
 
-<app-stats-card [title]="'Number of Locations'" [value]="25"></app-stats-card>
+
+  <app-pie-chart [title]="'User chart'" [subtitle]="'Number of users per role'" [dataset]="dataset" [labels]="labels" [colors]="colors">
+
+  </app-pie-chart>
+
+
+  <app-stats-card [title]="'Number of Locations'" [value]="25"></app-stats-card>
+
+
+</div>
+
+
