@@ -1,21 +1,13 @@
 <div class="page-wrapper">
   <div class="cards-grid">
 
-    <div class="card">
-      <h2>ZONE 1</h2>
-    </div>
+    @for(cardLink of cardsLinks; track $index){
+      <div class="card"  routerLink="{{cardLink.link}}">
+        <h2>{{cardLink.label}}</h2>
+      </div>
+    }
 
-    <div class="card">
-      <h2>ZONE 2</h2>
-    </div>
 
-    <div class="card">
-      <h2>ZONE 3</h2>
-    </div>
-
-    <div class="card">
-      <h2>ZONE 4</h2>
-    </div>
 
   </div>
 </div>
