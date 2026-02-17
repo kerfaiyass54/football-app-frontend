@@ -93,6 +93,14 @@ import {
   SupportersManagementComponent
 } from "./admin/user-management/supporters-management/supporters-management.component";
 import {BuildersManagementComponent} from "./admin/user-management/builders-management/builders-management.component";
+import {
+  BuildersActionsComponent
+} from "./admin/user-management/builders-management/builders-actions/builders-actions.component";
+import {BuildersStatComponent} from "./admin/user-management/builders-management/builders-stat/builders-stat.component";
+import {BuildersListComponent} from "./admin/user-management/builders-management/builders-list/builders-list.component";
+import {
+  BuildersAddingComponent
+} from "./admin/user-management/builders-management/builders-adding/builders-adding.component";
 
 export const routes: Routes = [
   {
@@ -148,6 +156,22 @@ export const routes: Routes = [
           {
             path:'builders-manage',
             component:BuildersManagementComponent
+          },
+          {
+            path:'builder-actions',
+            component:BuildersActionsComponent
+          },
+          {
+            path:'builder-stats',
+            component:BuildersStatComponent
+          },
+          {
+            path:'builder-list',
+            component:BuildersListComponent
+          },
+          {
+            path:'builders-add',
+            component:BuildersAddingComponent
           }
         ]
       },
