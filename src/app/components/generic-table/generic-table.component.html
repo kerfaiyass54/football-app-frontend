@@ -1,0 +1,96 @@
+<div class="card shadow-sm p-3">
+
+  <!-- Top Bar -->
+  <div class="d-flex justify-content-between mb-3 flex-wrap gap-3">
+
+    <input
+      class="form-control w-auto"
+      placeholder="Search..."
+      [ngModel]="globalSearch()"
+      (ngModelChange)="globalSearch.set($event)"
+    />
+
+    <select class="form-select form-select-sm w-auto"
+            [ngModel]="pageSize()"
+            (ngModelChange)="setPageSize($event)">
+      @for (s of pageSizeOptions(); track s) {
+        <option [ngValue]="s">{{ s }}</option>
+      }
+    </select>
+
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+
+      <thead class="table-light">
+      <tr>
+        @if (enableCheckbox()) {
+          <th>
+            <input type="checkbox" (change)="toggleAll()">
+          </th>
+        }
+
+        @for (col of columns(); track col.key) {
+          <th (click)="col.sortable && sort(col.key)"
+              [class.cursor-pointer]="col.sortable">
+            {{ col.label }}
+          </th>
+        }
+      </tr>
+      </thead>
+
+      <tbody>
+        @for (row of paginatedData(); track row.id; let i = $index) {
+          <tr class="animate-row"
+              [class.table-active]="isSelected(row.id)"
+              [style.animationDelay.ms]="i * 40">
+
+            @if (enableCheckbox()) {
+              <td>
+                <input type="checkbox"
+                       [checked]="isSelected(row.id)"
+                       (change)="toggleRow(row.id)">
+              </td>
+            }
+
+            @for (col of columns(); track col.key) {
+              <td>{{ row[col.key] }}</td>
+            }
+
+          </tr>
+        }
+      </tbody>
+
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <nav class="mt-3 d-flex justify-content-center">
+    <ul class="pagination">
+
+      <li class="page-item" [class.disabled]="currentPage() === 1">
+        <button class="page-link"
+                (click)="changePage(currentPage() - 1)">«</button>
+      </li>
+
+      @for (p of pages(); track p) {
+        <li class="page-item"
+            [class.active]="currentPage() === p">
+          <button class="page-link"
+                  (click)="changePage(p)">
+            {{ p }}
+          </button>
+        </li>
+      }
+
+      <li class="page-item"
+          [class.disabled]="currentPage() === totalPages()">
+        <button class="page-link"
+                (click)="changePage(currentPage() + 1)">»</button>
+      </li>
+
+    </ul>
+  </nav>
+
+</div>
