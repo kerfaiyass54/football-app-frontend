@@ -23,6 +23,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.1",
+    "flag-icons": "^7.5.0",
     "keycloak-js": "^25.0.0",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
