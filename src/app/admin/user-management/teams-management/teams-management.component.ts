@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-cards.component";
 
 @Component({
   selector: 'app-teams-management',
-  imports: [],
+  imports: [
+    UserCardsComponent
+  ],
   templateUrl: './teams-management.component.html',
   styleUrl: './teams-management.component.css',
 })
-export class TeamsManagementComponent {
+export class TeamsManagementComponent implements OnInit{
+
+  links: any[] = [];
+
+  ngOnInit() {
+  }
 
 }
