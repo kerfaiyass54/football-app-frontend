@@ -29,9 +29,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeflex/primeflex.css",
-              "node_modules/flag-icons/css/flag-icons.min.css"
-            ],
+              "node_modules/primeflex/primeflex.css"],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
