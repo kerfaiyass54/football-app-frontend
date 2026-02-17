@@ -82,6 +82,17 @@ import {roleGuard} from "./Shared/services/guard/auth.guard";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {NoAccessComponent} from "./no-access/no-access.component";
 import {RefereeComponent} from "./referee/referee.component";
+import {PlayersManagementComponent} from "./admin/user-management/players-management/players-management.component";
+import {ManagersManagementComponent} from "./admin/user-management/managers-management/managers-management.component";
+import {TeamsManagementComponent} from "./admin/user-management/teams-management/teams-management.component";
+import {RefereesManagementComponent} from "./admin/user-management/referees-management/referees-management.component";
+import {
+  OrganizersManagementComponent
+} from "./admin/user-management/organizers-management/organizers-management.component";
+import {
+  SupportersManagementComponent
+} from "./admin/user-management/supporters-management/supporters-management.component";
+import {BuildersManagementComponent} from "./admin/user-management/builders-management/builders-management.component";
 
 export const routes: Routes = [
   {
@@ -109,7 +120,36 @@ export const routes: Routes = [
         },{
           path:'details-location/:id',
           component:DetailsLocationComponent
-        }]
+        },
+          {
+            path:'managers-manage',
+            component:ManagersManagementComponent
+          },
+          {
+            path:'players-manage',
+            component:PlayersManagementComponent
+          },
+          {
+            path:'teams-manage',
+            component:TeamsManagementComponent
+          },
+          {
+            path:'referees-manage',
+            component:RefereesManagementComponent
+          },
+          {
+            path:'organizers-manage',
+            component:OrganizersManagementComponent
+          },
+          {
+            path:'supporters-manage',
+            component:SupportersManagementComponent
+          },
+          {
+            path:'builders-manage',
+            component:BuildersManagementComponent
+          }
+        ]
       },
       {
         path:'builder',
