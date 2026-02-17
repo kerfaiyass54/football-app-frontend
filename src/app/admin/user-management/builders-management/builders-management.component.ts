@@ -11,7 +11,12 @@ import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-card
 })
 export class BuildersManagementComponent implements OnInit{
 
-  links: any[] = [];
+  links = [
+    { label: 'Actions', link: '/admin/builder-actions' },
+    { label: 'Statistics', link: '/admin/builder-stats' },
+    { label: 'Builders List', link: '/admin/builder-list' },
+    { label: 'Add Builder', link: '/admin/builders-add' }
+  ];
 
   ngOnInit() {
   }
