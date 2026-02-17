@@ -1,8 +1,11 @@
 import {Component, Input} from '@angular/core';
 import {RouterLink} from "@angular/router";
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-user-cards',
+  standalone: true,
   imports: [
     RouterLink
   ],
@@ -11,6 +14,12 @@ import {RouterLink} from "@angular/router";
 })
 export class UserCardsComponent {
 
-  @Input() cardsLinks: any[] = []
+  @Input() cardsLinks: any[] = [];
+
+  constructor(private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 
 }

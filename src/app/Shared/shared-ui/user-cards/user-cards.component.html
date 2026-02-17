@@ -1,13 +1,20 @@
 <div class="page-wrapper">
-  <div class="cards-grid">
 
-    @for(cardLink of cardsLinks; track $index){
-      <div class="card"  routerLink="{{cardLink.link}}">
-        <h2>{{cardLink.label}}</h2>
-      </div>
-    }
-
-
-
+  <div class="content">
+    <div class="cards-grid">
+      @for(cardLink of cardsLinks; track $index){
+        <div class="card" [routerLink]="cardLink.link">
+          <h2>{{cardLink.label}}</h2>
+        </div>
+      }
+    </div>
   </div>
+
+  <!-- Bottom Button -->
+  <div class="bottom-nav">
+    <button class="prev-btn" (click)="goBack()">
+      ← Previous
+    </button>
+  </div>
+
 </div>

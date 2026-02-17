@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {BarChartsComponent} from "../../components/charts/bar-charts/bar-charts.component";
 import {PieChartComponent} from "../../components/charts/pie-chart/pie-chart.component";
 import {StatsCardComponent} from "../../components/cards/stats-card/stats-card.component";
+import {UserCardsComponent} from "../../Shared/shared-ui/user-cards/user-cards.component";
 
 @Component({
   selector: 'app-admin-home',
@@ -9,7 +10,8 @@ import {StatsCardComponent} from "../../components/cards/stats-card/stats-card.c
   imports: [
     BarChartsComponent,
     PieChartComponent,
-    StatsCardComponent
+    StatsCardComponent,
+    UserCardsComponent
   ],
   templateUrl: './admin-home.component.html',
   styleUrl: './admin-home.component.css',

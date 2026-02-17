@@ -3,12 +3,12 @@
 /* ========================= */
 
 .page-wrapper {
-  min-height: calc(70vh - 70px); /* full height below navbar */
-  padding: 40px 40px;
+  min-height: calc(60vh - 70px);
+  padding: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;   /* 👈 stack vertically */
 }
+
 
 /* ========================= */
 /* GRID */
@@ -137,4 +137,59 @@
     width: 100%;
     max-width: 350px;
   }
+}
+
+
+/* ========================= */
+/* BOTTOM NAVIGATION */
+/* ========================= */
+
+.bottom-nav {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prev-btn {
+  padding: 12px 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #6c5ce7, #cd4dff);
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+
+  transition: all 0.3s ease;
+}
+
+.prev-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.prev-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* Center only the cards */
+.content {
+  flex: 1;                     /* 👈 pushes button down */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bottom button aligned center */
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+}
+
+button{
+  width: 100%;
 }
