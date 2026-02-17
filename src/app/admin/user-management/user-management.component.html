@@ -6,9 +6,9 @@
     </p>
 
     <div class="hover-card">
-      @for(label of labels; track $index){
-        <div class="panel">
-          <span>{{ label }}</span>
+      @for(l of labels; track $index){
+        <div class="panel" routerLink="{{ '/admin' + l.route}}">
+          <span>{{ l.label }}</span>
         </div>
       }
     </div>
