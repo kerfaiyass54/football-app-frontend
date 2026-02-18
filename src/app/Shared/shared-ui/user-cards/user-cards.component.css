@@ -181,15 +181,3 @@
   justify-content: center;
   align-items: center;
 }
-
-/* Bottom button aligned center */
-.bottom-nav {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  width: 100%;
-}
-
-button{
-  width: 100%;
-}
