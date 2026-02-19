@@ -42,6 +42,8 @@ export class GenericTableComponent<T extends { id: any }> {
   columns = input.required<TableColumn<T>[]>();
   enableCheckbox = input<boolean>(false);
   pageSizeOptions = input<number[]>([5, 10]);
+  selectionMode = input<'single' | 'multiple'>('multiple');
+
 
   // ---------- OUTPUTS ----------
   selectedChange = output<T[]>();
@@ -122,16 +124,35 @@ export class GenericTableComponent<T extends { id: any }> {
   }
 
   toggleRow(id: number) {
-    this.selectedIds.update(ids =>
-      ids.includes(id)
-        ? ids.filter(x => x !== id)
-        : [...ids, id]
-    );
+
+    if (this.selectionMode() === 'single') {
+
+      if (this.selectedIds().includes(id)) {
+        this.selectedIds.set([]);
+      } else {
+        this.selectedIds.set([id]);
+      }
+
+    } else {
+
+      this.selectedIds.update(ids =>
+        ids.includes(id)
+          ? ids.filter(x => x !== id)
+          : [...ids, id]
+      );
+
+    }
 
     this.emitSelection();
   }
 
+
   toggleAll() {
+
+    if (this.selectionMode() === 'single') {
+      return; // Do nothing in single mode
+    }
+
     const pageIds = this.paginatedData().map(r => r.id);
     const allSelected = pageIds.every(id =>
       this.selectedIds().includes(id)
@@ -145,6 +166,7 @@ export class GenericTableComponent<T extends { id: any }> {
 
     this.emitSelection();
   }
+
 
   emitSelection() {
     const selected = this.data().filter(d =>

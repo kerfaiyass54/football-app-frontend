@@ -25,11 +25,12 @@
 
       <thead class="table-light">
       <tr>
-        @if (enableCheckbox()) {
+        @if (enableCheckbox() && selectionMode() === 'multiple') {
           <th>
             <input type="checkbox" (change)="toggleAll()">
           </th>
         }
+
 
         @for (col of columns(); track col.key) {
           <th (click)="col.sortable && sort(col.key)"
