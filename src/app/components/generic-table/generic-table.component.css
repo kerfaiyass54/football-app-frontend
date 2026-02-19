@@ -192,7 +192,7 @@ input[type="checkbox"]:hover {
 
 /* Make table container respect page height */
 .card {
-  height: calc(70vh - 140px); /* adjust if navbar height changes */
+  height: calc(60vh - 140px); /* adjust if navbar height changes */
   display: flex;
   flex-direction: column;
 }
