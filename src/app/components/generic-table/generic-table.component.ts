@@ -8,7 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-export type ColumnType = 'text' | 'badge' | 'icon';
+export type ColumnType = 'text' | 'badge' | 'icon' | 'number' | 'enum' | 'currency' | 'date';
 
 export interface TableColumn<T> {
   key: keyof T;
