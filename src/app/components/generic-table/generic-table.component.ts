@@ -35,7 +35,7 @@ export interface TableColumn<T> {
   templateUrl: './generic-table.component.html',
   styleUrl: './generic-table.component.css'
 })
-export class GenericTableComponent<T extends { id: number }> {
+export class GenericTableComponent<T extends { id: any }> {
 
   // ---------- INPUTS ----------
   data = input.required<T[]>();
