@@ -25,7 +25,7 @@
 
       <thead class="table-light">
       <tr>
-        @if (enableCheckbox() && selectionMode() === 'multiple') {
+        @if (enableCheckbox()) {
           <th>
             <input type="checkbox" (change)="toggleAll()">
           </th>

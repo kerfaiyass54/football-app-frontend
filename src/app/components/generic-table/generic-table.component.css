@@ -261,3 +261,26 @@ input[type="checkbox"]:hover {
   table-layout: fixed;
 }
 
+/* Checkbox column fixed width */
+.table th:first-child,
+.table td:first-child {
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.table tbody {
+  scrollbar-gutter: stable;
+}
+
+.table {
+  display: flex;
+}
+.table tbody {
+  display: block;
+}
+
+.table-responsive {
+  max-height: 60vh;
+  overflow-y: auto;
+}
