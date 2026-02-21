@@ -3,7 +3,7 @@ import {
   computed,
   input,
   output,
-  signal
+  signal, effect
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -43,6 +43,8 @@ export class GenericTableComponent<T extends { id: any }> {
   enableCheckbox = input<boolean>(false);
   pageSizeOptions = input<number[]>([5, 10]);
   selectionMode = input<'single' | 'multiple'>('multiple');
+  page = input<number>(1);
+  size = input<number | null>(null);
 
 
   // ---------- OUTPUTS ----------
@@ -53,11 +55,22 @@ export class GenericTableComponent<T extends { id: any }> {
   // ---------- INTERNAL STATE ----------
   globalSearch = signal('');
   selectedIds = signal<number[]>([]);
-  currentPage = signal(1);
-  pageSize = signal(this.pageSizeOptions()[0]);
-
+  currentPage = signal(this.page());
+  pageSize = signal(this.size() ?? this.pageSizeOptions()[0]);
   sortColumn = signal<keyof T | null>(null);
   sortDirection = signal<'asc' | 'desc'>('asc');
+
+  constructor() {
+    effect(() => {
+      this.currentPage.set(this.page());
+    });
+
+    effect(() => {
+      if (this.size() !== null) {
+        this.pageSize.set(this.size()!);
+      }
+    });
+  }
 
   // ---------- COMPUTED ----------
   filteredData = computed(() => {
