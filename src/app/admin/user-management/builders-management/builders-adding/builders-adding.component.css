@@ -14,9 +14,10 @@
 
 .sidebar {
   width: 240px;
-  background: linear-gradient(180deg, #0f172a, #1e293b);
+  background: linear-gradient(180deg, #ffffff, #ffffff);
   padding: 2rem 1rem;
-  color: white;
+  color: #232325;
+  border-radius: 8px;
 }
 
 .step-item {
@@ -32,7 +33,9 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #334155;
+  border-color: blueviolet;
+  border-style: groove;
+  background: #cd4dff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,11 +43,16 @@
 }
 
 .step-item.active .circle {
-  background: #10b981;
+  background: #cd4dff;
+  color: white;
+  border-color: #cf8de4;
+
 }
 
 .step-item.completed .circle {
-  background: #22c55e;
+  background: #9ac690;
+  border-color: #9ac690;
+
 }
 
 /* ================================
