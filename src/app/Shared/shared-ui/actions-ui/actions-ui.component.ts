@@ -1,9 +1,11 @@
-import {Component, computed, signal} from '@angular/core';
-import {GenericTableComponent, TableColumn} from "../../../components/generic-table/generic-table.component";
-import {FormsModule} from "@angular/forms";
+import { Component, computed, signal, OnInit } from '@angular/core';
+import { GenericTableComponent, TableColumn } from "../../../components/generic-table/generic-table.component";
+import { FormsModule } from "@angular/forms";
+import {BuilderService} from "../../../admin/services/builder.service";
 
 @Component({
   selector: 'app-actions-ui',
+  standalone: true,
   imports: [
     FormsModule,
     GenericTableComponent
@@ -11,37 +13,51 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './actions-ui.component.html',
   styleUrl: './actions-ui.component.css',
 })
-export class ActionsUiComponent {
+export class ActionsUiComponent implements OnInit {
+
+  constructor(private builderService: BuilderService) {}
+
   searchTerm = signal('');
 
   // Selected rows
   selectedUsers = signal<any[]>([]);
 
-  // Data
-  users: any[] = [
-    { id: 1, name: 'John Doe', email: 'john@mail.com', role: 'Admin' },
-    { id: 2, name: 'Jane Smith', email: 'jane@mail.com', role: 'any' },
-    { id: 3, name: 'Mike Brown', email: 'mike@mail.com', role: 'Manager' }
-  ];
+  // ✅ Replace users with builders
+  users = signal<any[]>([]);
 
+  // ✅ UPDATED COLUMNS FOR BUILDER
   columns: TableColumn<any>[] = [
     { key: 'name', label: 'Name', sortable: true },
-    { key: 'email', label: 'Email' },
-    { key: 'role', label: 'Role', sortable: true }
+    { key: 'nationality', label: 'Nationality', sortable: true },
+    { key: 'expertise', label: 'Expertise', sortable: true },
+    { key: 'yearEstablished', label: 'Established', sortable: true },
+    { key: 'price', label: 'Price', sortable: true }
   ];
+
+  ngOnInit(): void {
+    this.loadBuilders();
+  }
+
+  loadBuilders() {
+    this.builderService.getAll(0, 20).subscribe({
+      next: (res: any) => {
+        this.users.set(res.content);
+      },
+      error: (err:any) => console.error(err)
+    });
+  }
 
   // Filtered data (external search)
   filteredUsers = computed(() => {
     const term = this.searchTerm().toLowerCase();
-    if (!term) return this.users;
+    if (!term) return this.users();
 
-    return this.users.filter(u =>
+    return this.users().filter(u =>
       Object.values(u).some(val =>
         String(val).toLowerCase().includes(term)
       )
     );
   });
-
 
   onSelectionChange(users: any[]) {
     this.selectedUsers.set(users);
@@ -51,7 +67,6 @@ export class ActionsUiComponent {
     const user = this.selectedUsers()[0];
     if (!user) return;
 
-    console.log('Selected user:', user);
+    console.log('Selected builder:', user);
   }
-
 }
