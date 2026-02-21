@@ -12,13 +12,11 @@ import {PrimeNG} from "primeng/config";
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
 
-  constructor(private primeng: PrimeNG) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.primeng.ripple.set(true);
-  }
+
 
 
 
