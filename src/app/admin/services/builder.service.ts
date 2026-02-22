@@ -21,7 +21,7 @@ export class BuilderService {
   }
 
   // GET BY ID
-  getBuilderById(id: number): Observable<Builder> {
+  getBuilderById(id: any): Observable<Builder> {
     return this.http.get<Builder>(`${this.baseUrl}/id/${id}`);
   }
 

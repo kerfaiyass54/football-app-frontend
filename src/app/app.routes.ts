@@ -101,6 +101,9 @@ import {BuildersListComponent} from "./admin/user-management/builders-management
 import {
   BuildersAddingComponent
 } from "./admin/user-management/builders-management/builders-adding/builders-adding.component";
+import {
+  BuilderDetailsComponent
+} from "./admin/user-management/builders-management/builder-details/builder-details.component";
 
 export const routes: Routes = [
   {
@@ -128,6 +131,9 @@ export const routes: Routes = [
         },{
           path:'details-location/:id',
           component:DetailsLocationComponent
+        },{
+          path:'details-builders/:id',
+          component:BuilderDetailsComponent
         },
           {
             path:'managers-manage',

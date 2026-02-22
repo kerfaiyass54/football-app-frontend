@@ -2,6 +2,7 @@ import { Component, computed, signal, OnInit } from '@angular/core';
 import { GenericTableComponent, TableColumn } from "../../../components/generic-table/generic-table.component";
 import { FormsModule } from "@angular/forms";
 import {BuilderService} from "../../../admin/services/builder.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-actions-ui',
@@ -15,7 +16,7 @@ import {BuilderService} from "../../../admin/services/builder.service";
 })
 export class ActionsUiComponent implements OnInit {
 
-  constructor(private builderService: BuilderService) {}
+  constructor(private builderService: BuilderService, private router: Router) {}
 
   searchTerm = signal('');
 
@@ -66,7 +67,7 @@ export class ActionsUiComponent implements OnInit {
   seeDetails() {
     const user = this.selectedUsers()[0];
     if (!user) return;
-
+    this.router.navigate(['/admin/details-builders', user.id]);
     console.log('Selected builder:', user);
   }
 }

@@ -1,0 +1,62 @@
+<div class="builder-wrapper">
+
+  <div class="builder-card">
+
+    <!-- Header -->
+    <div class="builder-header">
+      <h2 class="builder-name">{{ builder?.name }}</h2>
+
+      <span class="expertise-badge">
+        {{ builder?.expertise }}
+      </span>
+    </div>
+
+    <!-- Info Row -->
+    <div class="builder-info">
+
+      @if(builder?.nationality){
+        <div class="info-box nationality">
+          <img
+            [src]="'https://flagcdn.com/w40/' + countryCode + '.png'"
+            alt="flag"
+            class="flag-img"
+          />
+          <span>{{ builder?.nationality }}</span>
+        </div>
+      }
+
+      <!-- Nationality with Flag -->
+
+
+      <!-- Established -->
+      <div class="info-box">
+        <i class="bi bi-calendar-event"></i>
+        <span>{{ builder?.yearEstablished }}</span>
+      </div>
+
+      <!-- Price -->
+      <div class="info-box price">
+        <i class="bi bi-currency-dollar"></i>
+        <span>{{ builder?.price | number }} $</span>
+      </div>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="builder-actions">
+      <button class="btn-update" (click)="updatePrice()">
+        <i class="bi bi-pencil-square"></i>
+        Update
+      </button>
+
+      <button class="btn-delete" (click)="deleteBuilder()">
+        <i class="bi bi-trash"></i>
+        Delete
+      </button>
+    </div>
+
+  </div>
+
+  <app-previous-button></app-previous-button>
+
+</div>
