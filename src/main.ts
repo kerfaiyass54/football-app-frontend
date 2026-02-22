@@ -9,6 +9,7 @@ import { provideHttpClient } from "@angular/common/http";
 import {provideAnimations} from "@angular/platform-browser/animations";
 import Aura from "@primeuix/themes/aura";
 import {providePrimeNG} from "primeng/config";
+import {provideToastr} from "ngx-toastr";
 
 const keycloakService = new KeycloakService();
 
@@ -16,7 +17,7 @@ const keycloakService = new KeycloakService();
 
 keycloakService.init().then(() => {
   bootstrapApplication(AppComponent, {
-    providers: [
+    providers: [provideToastr(),
       provideZoneChangeDetection(),provideRouter(routes),provideHttpClient(),provideAnimations(),providePrimeNG({
         theme: {
           preset: Aura
