@@ -17,7 +17,13 @@ const keycloakService = new KeycloakService();
 
 keycloakService.init().then(() => {
   bootstrapApplication(AppComponent, {
-    providers: [provideToastr(),
+    providers: [provideToastr({
+      positionClass: 'toast-top-right',
+      timeOut: 3000,
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true
+    }),
       provideZoneChangeDetection(),provideRouter(routes),provideHttpClient(),provideAnimations(),providePrimeNG({
         theme: {
           preset: Aura
