@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Builder} from "../../Models/builder";
+import {ExpertiseStats} from "../../Models/expertise-stats";
+import {YearsMaxMin} from "../../Models/years-max-min";
 
 
 @Injectable({
@@ -41,6 +43,25 @@ export class BuilderService {
 
   getAll(page: number, size: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/?page=${page}&size=${size}`);
+  }
+
+  getExpertiseStats(expertise: string): Observable<ExpertiseStats> {
+    return this.http.get<ExpertiseStats>(
+      `${this.baseUrl}/stats/${expertise}`
+    );
+  }
+
+  getYearsStats(): Observable<YearsMaxMin> {
+    return this.http.get<YearsMaxMin>(
+      `${this.baseUrl}/years`
+    );
+  }
+
+  getMostNationality(): Observable<string> {
+    return this.http.get(
+      `${this.baseUrl}/nations`,
+      { responseType: 'text' }
+    );
   }
 
 }

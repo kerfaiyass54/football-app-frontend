@@ -24,8 +24,7 @@ export class HomePageComponent implements OnInit{
 
   ngOnInit() {
     this.roles = this.keyloak.getRoles();
-    console.log(this.roles);
-    this.access();}
+    console.log(this.roles);}
 
   access(){
 
