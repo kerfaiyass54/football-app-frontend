@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BuilderService } from '../../../services/builder.service';
 import {PreviousButtonComponent} from "../../../../components/buttons/previous-button/previous-button.component";
 import {COUNTRIES} from "../../../../Shared/constants/countries";
+import {LoaderComponent} from "../../../../components/loader/loader.component";
 
 @Component({
   selector: 'app-builder-details',
   standalone: true,
-  imports: [CommonModule, PreviousButtonComponent],
+  imports: [CommonModule, PreviousButtonComponent, LoaderComponent],
   templateUrl: './builder-details.component.html',
   styleUrl: './builder-details.component.css'
 })
 export class BuilderDetailsComponent implements OnInit {
 
   builder: any;
-  loading = true;
+  loading = signal(true);
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +30,8 @@ export class BuilderDetailsComponent implements OnInit {
     if (id) {
       this.builderService.getBuilderById(id).subscribe(res => {
         this.builder = res;
-        this.loading = false;
+        setTimeout(() => { this.loading.set(false); }, 1500);
+
       });
     }
   }
