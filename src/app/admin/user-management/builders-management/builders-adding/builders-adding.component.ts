@@ -1,15 +1,20 @@
 import { Component, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {COUNTRIES} from "../../../../Shared/constants/countries";
+import {PreviousButtonComponent} from "../../../../components/buttons/previous-button/previous-button.component";
+import {BuilderService} from "../../../services/builder.service";
 
 @Component({
   selector: 'app-builders-adding',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PreviousButtonComponent],
   templateUrl: './builders-adding.component.html',
   styleUrl: './builders-adding.component.css',
 })
 export class BuildersAddingComponent {
+
+  constructor(private builderService: BuilderService) {
+  }
 
   /* =========================
      🟣 STEPPER STATE
@@ -108,6 +113,11 @@ export class BuildersAddingComponent {
       price: this.price()
     };
 
-    console.log('🏟 Stadium Builder Created:', builder);
+    this.builderService.createBuilder(builder).subscribe(
+      ()=>{
+        console.log('🏟 Stadium Builder Created:', builder);
+      }
+    )
+
   }
 }
