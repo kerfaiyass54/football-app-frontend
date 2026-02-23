@@ -41,6 +41,10 @@ export class ManagerService {
     );
   }
 
+  getManagersStatusSummary() {
+    return this.http.get<any>(`${this.baseUrl}/number`);
+  }
+
   // ✅ Get Managers With Status (DTO)
   getManagersWithStatus(page: number = 0, size: number = 5): Observable<any> {
     let params = new HttpParams()
@@ -48,6 +52,12 @@ export class ManagerService {
       .set('size', size);
 
     return this.http.get<any>(`${this.baseUrl}/status`, { params });
+  }
+
+  getNumberOfManagersByStatus(status: string) {
+    return this.http.get<number>(
+      `${this.baseUrl}/stats/number/${status}`
+    );
   }
 
   // ✅ Create any
