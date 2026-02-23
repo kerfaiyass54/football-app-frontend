@@ -6,10 +6,14 @@ export const MANAGER_FIELDS = [
 ];
 
 export const MANAGER_TABLE_COLUMNS = [
+  { key: 'id', label: 'ID',
+    sortable: true },
   { key: 'name', label: 'Name',
     sortable: true },
   { key: 'nationality', label: 'Nationality',
     sortable: true },
   { key: 'status', label: 'Status',
+    sortable: true },
+  { key: 'year', label: 'Year of birth',
     sortable: true }
 ];
