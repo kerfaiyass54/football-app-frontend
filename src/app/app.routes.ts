@@ -104,6 +104,14 @@ import {
 import {
   BuilderDetailsComponent
 } from "./admin/user-management/builders-management/builder-details/builder-details.component";
+import {
+  ManagersActionsComponent
+} from "./admin/user-management/managers-management/managers-actions/managers-actions.component";
+import {ManagersStatComponent} from "./admin/user-management/managers-management/managers-stat/managers-stat.component";
+import {ManagersListComponent} from "./admin/user-management/managers-management/managers-list/managers-list.component";
+import {
+  ManagersAddingComponent
+} from "./admin/user-management/managers-management/managers-adding/managers-adding.component";
 
 export const routes: Routes = [
   {
@@ -178,6 +186,26 @@ export const routes: Routes = [
           {
             path:'builders-add',
             component:BuildersAddingComponent
+          },
+          {
+            path:'manager-details/:id',
+            component:ManagerDetailsComponent
+          },
+          {
+            path:'manager-actions',
+            component:ManagersActionsComponent
+          },
+          {
+            path:'manager-stats',
+            component:ManagersStatComponent
+          },
+          {
+            path:'manager-list',
+            component:ManagersListComponent
+          },
+          {
+            path:'managers-add',
+            component:ManagersAddingComponent
           }
         ]
       },
