@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class OrganizerService {
 
-  private baseUrl = 'http://localhost:8080/organizer';
+  private baseUrl = 'http://localhost:8084/organizer';
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +36,7 @@ export class OrganizerService {
   }
 
   // DELETE
-  deleteOrganizer(id: number): Observable<void> {
+  deleteOrganizer(id: any): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

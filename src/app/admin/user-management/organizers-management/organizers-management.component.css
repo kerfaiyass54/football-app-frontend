@@ -45,3 +45,55 @@
 .search-wrapper button:active {
   transform: scale(0.98);
 }
+
+/* Modal container */
+.custom-modal {
+  border-radius: 16px;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Input styling */
+.custom-input {
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+  background: white;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  border: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-gradient:active {
+  transform: scale(0.97);
+}
+
+/* Label */
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}

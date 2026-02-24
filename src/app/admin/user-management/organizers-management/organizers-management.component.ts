@@ -24,6 +24,9 @@ export class OrganizersManagementComponent implements OnInit {
   searchTerm = signal('');
   selectedOrganizers = signal<any[]>([]);
   organizers = signal<any[]>([]);
+  selectedOrganizerId: number | null = null;
+
+  organizerName: string = '';
 
   columns = ORGANIZER_TABLE_COLUMNS;
 
@@ -31,7 +34,17 @@ export class OrganizersManagementComponent implements OnInit {
     this.loadOrganizers();
   }
 
+  confirmAddOrganizer() {
+    if (!this.organizerName.trim()) return;
+
+    this.organizerService.addOrganizer(this.organizerName).subscribe(() => {
+      this.loadOrganizers();
+      this.organizerName = '';
+    });
+  }
+
   loadOrganizers() {
+    this.organizerName = '';
     this.organizerService.getOrganizers(0, 20).subscribe({
       next: (res: any) => {
         this.organizers.set(res.content);
@@ -63,14 +76,24 @@ export class OrganizersManagementComponent implements OnInit {
   updateOrganizer() {
     const organizer = this.selectedOrganizers()[0];
     if (!organizer) return;
-
-    console.log('Open Update Organizer modal', organizer);
+    this.selectedOrganizerId = organizer.id;
+    if (!this.selectedOrganizerId || !this.organizerName.trim()) return;
+    this.organizerService.updateOrganizer(
+      this.selectedOrganizerId,
+      this.organizerName
+    ).subscribe(() => {
+      this.loadOrganizers();
+    });
   }
 
   deleteOrganizer() {
     const organizer = this.selectedOrganizers()[0];
     if (!organizer) return;
-
-    console.log('Open Delete Confirmation modal', organizer);
+    this.selectedOrganizerId = organizer.id;
+    this.organizerService.deleteOrganizer(this.selectedOrganizerId).subscribe(
+      ()=>{
+        this.loadOrganizers();
+      }
+    )
   }
 }
