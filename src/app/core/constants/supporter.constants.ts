@@ -19,6 +19,11 @@ export const SUPPORTER_FIELDS= [
 
 export const SUPPORTER_TABLE_COLUMNS = [
   {
+    key: 'id',
+    label: 'ID',
+    sortable: true
+  },
+  {
     key: 'name',
     label: 'Name',
     sortable: true
