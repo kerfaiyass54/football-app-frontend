@@ -11,7 +11,12 @@ import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-card
 })
 export class PlayersManagementComponent implements OnInit {
 
-  links: any [] = [];
+  links = [
+    { label: 'Actions', link: '/admin/player-actions' },
+    { label: 'Statistics', link: '/admin/player-stats' },
+    { label: 'Players List', link: '/admin/player-list' },
+    { label: 'Add Player', link: '/admin/players-add' }
+  ];
 
   ngOnInit() {
   }
