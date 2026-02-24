@@ -4,6 +4,8 @@ export const REFEREE_FIELDS = [
 ];
 
 export const REFEREE_TABLE_COLUMNS = [
+  { key: 'id', label: 'ID',
+    sortable: true},
   { key: 'name', label: 'Name',
     sortable: true },
   { key: 'nationality', label: 'Nationality',
