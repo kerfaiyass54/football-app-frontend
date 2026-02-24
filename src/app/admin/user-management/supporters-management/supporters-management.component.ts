@@ -72,21 +72,6 @@ export class SupportersManagementComponent implements OnInit {
     });
   }
 
-  updateSupporter() {
-    const supporter = this.selectedSupporters()[0];
-    if (!supporter) return;
-
-    this.selectedSupporterId = supporter.id;
-    if (!this.selectedSupporterId) return;
-
-    this.supporterService.addSupporter({
-      id: this.selectedSupporterId,
-      name: this.supporterName,
-      nationality: this.supporterNationality
-    }).subscribe(() => {
-      this.loadSupporters();
-    });
-  }
 
   deleteSupporter() {
     const supporter = this.selectedSupporters()[0];
