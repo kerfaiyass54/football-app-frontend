@@ -1,33 +1,47 @@
 export enum PlayerPosition {
   GK = 'GK',
-  DEF = 'DEF',
-  MID = 'MID',
-  ATT = 'ATT'
-}
-
-export enum PlayerStatus {
-  ACTIVE = 'ACTIVE',
-  INJURED = 'INJURED',
-  RETIRED = 'RETIRED'
+  RB = 'RB',
+  LB = 'LB',
+  CB = 'CB',
+  SW = 'SW',
+  CM = 'CM',
+  CDM = 'CDM',
+  CAM = 'CAM',
+  LMF = 'LMF',
+  RMF = 'RMF',
+  ST = 'ST',
+  CF = 'CF',
+  SS = 'SS',
+  LWF = 'LWF',
+  RWF = 'RWF'
 }
 
 export enum PlayerSituation {
-  STARTING = 'STARTING',
-  SUBSTITUTE = 'SUBSTITUTE'
+  RETIRED = 'RETIRED',
+  YOUTH = 'YOUTH',
+  BENCH = 'BENCH',
+  LINEUP = 'LINEUP',
+  FREE = 'FREE'
 }
 
-export interface Player {
-  id?: string;
+export enum PlayerStatus {
+  BANNED = 'BANNED',
+  PLAYING = 'PLAYING',
+  PUNISHED = 'PUNISHED',
+  NEW = 'NEW',
+  FREE_AGENT = 'FREE_AGENT'
+}
+
+export interface PlayerDTO {
   name: string;
+  yearOfBirth: number;
   nationality: string;
   position: PlayerPosition;
-  ability: number;
-  yearOfBirth: number;
+  situation: PlayerSituation;
   status: PlayerStatus;
   marketValue: number;
-  lineup: PlayerSituation;
-  number: number;
-  contracts?: string[];
-  height: number;
-  weight: number;
+}
+
+export interface Player extends PlayerDTO {
+  id: string;
 }

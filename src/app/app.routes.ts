@@ -26,7 +26,7 @@ import {ConsultTournamentComponent} from "./manager/consult-tournament/consult-t
 import {MatchManagementComponent} from "./manager/match-management/match-management.component";
 import {MatchDetailsComponent} from "./manager/match-management/match-details/match-details.component";
 import {PlayerManagementComponent} from "./manager/player-management/player-management.component";
-import {PlayerDetailsComponent} from "./manager/player-management/player-details/player-details.component";
+import {PlayerDetailsComponent} from "./admin/user-management/players-management/player-details/player-details.component";
 import {UpdatePlayerComponent} from "./manager/player-management/update-player/update-player.component";
 import {PlayerTransferComponent} from "./manager/player-transfer/player-transfer.component";
 import {TransferAdjustComponent} from "./manager/player-transfer/transfer-adjust/transfer-adjust.component";
@@ -112,6 +112,14 @@ import {ManagersListComponent} from "./admin/user-management/managers-management
 import {
   ManagersAddingComponent
 } from "./admin/user-management/managers-management/managers-adding/managers-adding.component";
+import {
+  PlayersActionsComponent
+} from "./admin/user-management/players-management/players-actions/players-actions.component";
+import {PlayersStatComponent} from "./admin/user-management/players-management/players-stat/players-stat.component";
+import {PlayersListComponent} from "./admin/user-management/players-management/players-list/players-list.component";
+import {
+  PlayersAddingComponent
+} from "./admin/user-management/players-management/players-adding/players-adding.component";
 
 export const routes: Routes = [
   {
@@ -206,6 +214,26 @@ export const routes: Routes = [
           {
             path:'managers-add',
             component:ManagersAddingComponent
+          },
+          {
+            path:'player-details/:id',
+            component:PlayerDetailsComponent
+          },
+          {
+            path:'player-actions',
+            component:PlayersActionsComponent
+          },
+          {
+            path:'player-stats',
+            component:PlayersStatComponent
+          },
+          {
+            path:'player-list',
+            component:PlayersListComponent
+          },
+          {
+            path:'players-add',
+            component:PlayersAddingComponent
           }
         ]
       },
