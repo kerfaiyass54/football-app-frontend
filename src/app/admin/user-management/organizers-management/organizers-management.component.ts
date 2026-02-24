@@ -1,18 +1,76 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, computed, OnInit, signal} from '@angular/core';
 import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-cards.component";
+import {OrganizerService} from "../../services/organizer.service";
+import {ORGANIZER_TABLE_COLUMNS} from "../../../core/constants/organizer.constants";
+import {FormsModule} from "@angular/forms";
+import {GenericTableComponent} from "../../../components/generic-table/generic-table.component";
+import {PreviousButtonComponent} from "../../../components/buttons/previous-button/previous-button.component";
 
 @Component({
   selector: 'app-organizers-management',
   imports: [
-    UserCardsComponent
+    UserCardsComponent,
+    FormsModule,
+    GenericTableComponent,
+    PreviousButtonComponent
   ],
   templateUrl: './organizers-management.component.html',
   styleUrl: './organizers-management.component.css',
 })
-export class OrganizersManagementComponent implements OnInit{
+export class OrganizersManagementComponent implements OnInit {
 
-  links: any[] = [];
+  constructor(private organizerService: OrganizerService) {}
 
-  ngOnInit() {
+  searchTerm = signal('');
+  selectedOrganizers = signal<any[]>([]);
+  organizers = signal<any[]>([]);
+
+  columns = ORGANIZER_TABLE_COLUMNS;
+
+  ngOnInit(): void {
+    this.loadOrganizers();
+  }
+
+  loadOrganizers() {
+    this.organizerService.getOrganizers(0, 20).subscribe({
+      next: (res: any) => {
+        this.organizers.set(res.content);
+      },
+      error: (err: any) => console.error(err)
+    });
+  }
+
+  filteredOrganizers = computed(() => {
+    const term = this.searchTerm().toLowerCase();
+    if (!term) return this.organizers();
+
+    return this.organizers().filter(o =>
+      Object.values(o).some(val =>
+        String(val).toLowerCase().includes(term)
+      )
+    );
+  });
+
+  onSelectionChange(data: any[]) {
+    this.selectedOrganizers.set(data);
+  }
+
+  addOrganizer() {
+    // You will open Bootstrap modal here
+    console.log('Open Add Organizer modal');
+  }
+
+  updateOrganizer() {
+    const organizer = this.selectedOrganizers()[0];
+    if (!organizer) return;
+
+    console.log('Open Update Organizer modal', organizer);
+  }
+
+  deleteOrganizer() {
+    const organizer = this.selectedOrganizers()[0];
+    if (!organizer) return;
+
+    console.log('Open Delete Confirmation modal', organizer);
   }
 }
