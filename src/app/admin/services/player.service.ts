@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {PlayerDTO} from "../../core/models/player.model";
 import {Player} from "../../Models/player";
 
 @Injectable({
@@ -14,31 +13,31 @@ export class PlayerService {
   constructor(private http: HttpClient) {}
 
   // CREATE
-  createPlayer(player: PlayerDTO): Observable<Player> {
+  createPlayer(player: any): Observable<Player> {
     return this.http.post<Player>(`${this.baseUrl}/`, player);
   }
 
   // GET BY ID
-  getPlayerById(id: string): Observable<PlayerDTO> {
-    return this.http.get<PlayerDTO>(`${this.baseUrl}/${id}`);
+  getPlayerById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
 
   // GET BY NAME
-  getPlayerByName(name: string): Observable<PlayerDTO> {
-    return this.http.get<PlayerDTO>(
+  getPlayerByName(name: string): Observable<any> {
+    return this.http.get<any>(
       `${this.baseUrl}/name/${encodeURIComponent(name)}`
     );
   }
 
   // GET BY NATIONALITY
-  getPlayersByNationality(nationality: string): Observable<PlayerDTO[]> {
-    return this.http.get<PlayerDTO[]>(
+  getPlayersByNationality(nationality: string): Observable<any[]> {
+    return this.http.get<any[]>(
       `${this.baseUrl}/nationality/${nationality}`
     );
   }
 
   // UPDATE
-  updatePlayer(id: string, player: PlayerDTO): Observable<Player> {
+  updatePlayer(id: string, player: any): Observable<Player> {
     return this.http.put<Player>(`${this.baseUrl}/${id}`, player);
   }
 
