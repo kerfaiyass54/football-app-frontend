@@ -76,7 +76,7 @@ import {ListPlayerComponent} from "./team/list-player/list-player.component";
 import {ListTournamentsComponent} from "./team/list-tournaments/list-tournaments.component";
 import {ListTrainsComponent} from "./team/list-trains/list-trains.component";
 import {LookForManagerComponent} from "./team/look-for-manager/look-for-manager.component";
-import {ManagerDetailsComponent} from "./team/manager-details/manager-details.component";
+import {ManagerDetailsComponent} from "./admin/user-management/managers-management/manager-details/manager-details.component";
 import {AdminHomeComponent} from "./admin/admin-home/admin-home.component";
 import {roleGuard} from "./Shared/services/guard/auth.guard";
 import {HomePageComponent} from "./home-page/home-page.component";
