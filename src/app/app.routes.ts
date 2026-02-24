@@ -123,6 +123,10 @@ import {TeamsActionsComponent} from "./admin/user-management/teams-management/te
 import {TeamsStatComponent} from "./admin/user-management/teams-management/teams-stat/teams-stat.component";
 import {TeamsListComponent} from "./admin/user-management/teams-management/teams-list/teams-list.component";
 import {TeamsAddingComponent} from "./admin/user-management/teams-management/teams-adding/teams-adding.component";
+import {AllLocationsListComponent} from "./admin/location-management/all-locations-list/all-locations-list.component";
+import {
+  ContinentLocationsComponent
+} from "./admin/location-management/continent-locations/continent-locations.component";
 
 export const routes: Routes = [
   {
@@ -251,6 +255,14 @@ export const routes: Routes = [
           {
             path:'teams-add',
             component:TeamsAddingComponent
+          },
+          {
+            path:'locations-list',
+            component:AllLocationsListComponent
+          },
+          {
+            path:'list-location/:continent',
+            component:ContinentLocationsComponent
           }
         ]
       },

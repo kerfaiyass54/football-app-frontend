@@ -19,10 +19,13 @@ export const LOCATION_TABLE_COLUMNS = [
     sortable: true
   },
   {
-    key: 'supporters',
-    label: 'Supporters Count',
-    sortable: false,
-    formatter: (value: number[] | undefined) =>
-      value ? value.length.toString() : '0'
+    key: 'country',
+    label: 'Country',
+    sortable: true
+  },
+  {
+    key: 'continent',
+    label: 'Continent',
+    sortable: true
   }
 ];

@@ -200,3 +200,47 @@ export const COUNTRIES: Country[] = [
   { name: 'Zambia', code: 'zm' },
   { name: 'Zimbabwe', code: 'zw' }
 ];
+
+/* ========================= */
+/* CONTINENT GROUPS */
+/* ========================= */
+
+export const AFRICA = COUNTRIES.filter(c =>
+  [
+    'dz','ao','bj','bw','bf','bi','cv','cm','cf','td','km','cg','cd','dj',
+    'eg','gq','er','sz','et','ga','gm','gh','gn','gw','ke','ls','lr','ly',
+    'mg','mw','ml','mr','mu','ma','mz','na','ne','ng','rw','st','sn','sc',
+    'sl','so','za','ss','sd','tz','tg','tn','ug','zm','zw'
+  ].includes(c.code)
+);
+
+export const AMERICA = COUNTRIES.filter(c =>
+  [
+    'ag','bs','bb','bz','ca','cr','cu','dm','do','sv','gd','gt','ht','hn',
+    'jm','mx','ni','pa','kn','lc','vc','tt','us'
+  ].includes(c.code)
+);
+
+export const SOUTH_AMERICA = COUNTRIES.filter(c =>
+  [
+    'ar','bo','br','cl','co','ec','gy','py','pe','sr','uy','ve'
+  ].includes(c.code)
+);
+
+export const ASIA = COUNTRIES.filter(c =>
+  [
+    'af','am','az','bh','bd','bt','bn','kh','cn','ge','in','id','ir','iq',
+    'il','jp','jo','kz','kw','kg','la','lb','my','mv','mn','mm','np','kp',
+    'om','pk','ps','ph','qa','sa','sg','kr','lk','sy','tw','tj','th','tl',
+    'tr','tm','ae','uz','vn','ye'
+  ].includes(c.code)
+);
+
+export const EUROPE = COUNTRIES.filter(c =>
+  [
+    'al','ad','at','by','be','ba','bg','hr','cy','cz','dk','ee','fi','fr',
+    'de','gr','hu','is','ie','it','lv','li','lt','lu','mt','md','mc','me',
+    'nl','mk','no','pl','pt','ro','ru','sm','rs','sk','si','es','se','ch',
+    'ua','gb','va'
+  ].includes(c.code)
+);
