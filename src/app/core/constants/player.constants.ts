@@ -9,6 +9,8 @@ export const PLAYER_FIELDS = [
 ];
 
 export const PLAYER_TABLE_COLUMNS = [
+  { key: 'id', label: 'ID',
+    sortable: true },
   { key: 'name', label: 'Name',
     sortable: true },
   { key: 'position', label: 'Position',
