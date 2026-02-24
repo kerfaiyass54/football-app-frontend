@@ -37,14 +37,13 @@ export class TeamDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (!id) return;
-    this.loading.set(false);
-    // this.teamService.(id).subscribe({
-    //   next: (res: any) => {
-    //     this.team = res;
-    //     this.loading.set(false);
-    //   },
-    //   error: () => this.loading.set(false)
-    // });
+    this.teamService.getTeamById(id).subscribe({
+      next: (res: any) => {
+        this.team = res;
+        this.loading.set(false);
+      },
+      error: () => this.loading.set(false)
+    });
   }
 
   /* =========================
