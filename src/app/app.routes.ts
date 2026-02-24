@@ -118,6 +118,11 @@ import {PlayersListComponent} from "./admin/user-management/players-management/p
 import {
   PlayersAddingComponent
 } from "./admin/user-management/players-management/players-adding/players-adding.component";
+import {TeamDetailsComponent} from "./admin/user-management/teams-management/team-details/team-details.component";
+import {TeamsActionsComponent} from "./admin/user-management/teams-management/teams-actions/teams-actions.component";
+import {TeamsStatComponent} from "./admin/user-management/teams-management/teams-stat/teams-stat.component";
+import {TeamsListComponent} from "./admin/user-management/teams-management/teams-list/teams-list.component";
+import {TeamsAddingComponent} from "./admin/user-management/teams-management/teams-adding/teams-adding.component";
 
 export const routes: Routes = [
   {
@@ -226,6 +231,26 @@ export const routes: Routes = [
           {
             path:'players-add',
             component:PlayersAddingComponent
+          },
+          {
+            path:'team-details/:id',
+            component:TeamDetailsComponent
+          },
+          {
+            path:'team-actions',
+            component:TeamsActionsComponent
+          },
+          {
+            path:'team-stats',
+            component:TeamsStatComponent
+          },
+          {
+            path:'team-list',
+            component:TeamsListComponent
+          },
+          {
+            path:'teams-add',
+            component:TeamsAddingComponent
           }
         ]
       },
