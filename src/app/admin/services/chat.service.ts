@@ -20,4 +20,11 @@ export class ChatService {
       question: question
     });
   }
+
+  sendForExplanation(question: string, jsonResponse: any) {
+    return this.http.post('http://localhost:9000/explain', {
+      question: question,
+      json_response: jsonResponse
+    });
+  }
 }

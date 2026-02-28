@@ -1,10 +1,10 @@
-import { Component, signal, effect } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChatService } from '../services/chat.service';
-import {PORTS} from "../../Shared/constants/service-ports";
-import {PreviousButtonComponent} from "../../components/buttons/previous-button/previous-button.component";
+import { PORTS } from '../../Shared/constants/service-ports';
+import { PreviousButtonComponent } from '../../components/buttons/previous-button/previous-button.component';
 
 interface Message {
   role: 'user' | 'ai';
@@ -23,41 +23,66 @@ export class ChattingUiComponent {
   messages = signal<Message[]>([]);
   inputText = signal('');
   thinking = signal(false);
+
   serviceName!: string;
-  port!: String;
+  port!: string;
 
   constructor(
     private route: ActivatedRoute,
     private chatService: ChatService
   ) {
-    effect(() => {
-      this.serviceName = this.route.snapshot.paramMap.get('service')!;
-      const found = PORTS.find(p => p.service === this.serviceName);
+    this.serviceName = this.route.snapshot.paramMap.get('service')!;
 
-      if (!found) {
-        throw new Error('Service not found');
-      }
+    const found = PORTS.find(p => p.service === this.serviceName);
 
-      this.port = found.port;
-    });
+    if (!found) {
+      throw new Error('Service not found');
+    }
+
+    this.port = found.port;
   }
 
   sendMessage() {
     const text = this.inputText().trim();
     if (!text) return;
 
+    // Add user message
     this.messages.update(m => [...m, { role: 'user', content: text }]);
     this.inputText.set('');
     this.thinking.set(true);
 
+    // 1️⃣ Call microservice
     this.chatService.sendMessage(this.port, text).subscribe({
-      next: (res) => {
-        this.messages.update(m => [
-          ...m,
-          { role: 'ai', content: JSON.stringify(res, null, 2) }
-        ]);
-        this.thinking.set(false);
+
+      next: (apiResponse) => {
+
+        // 2️⃣ Send question + JSON to FastAPI explainer
+        this.chatService
+          .sendForExplanation(text, apiResponse)
+          .subscribe({
+
+            next: (explanation: any) => {
+
+              this.messages.update(m => [
+                ...m,
+                { role: 'ai', content: explanation.answer }
+              ]);
+
+              this.thinking.set(false);
+            },
+
+            error: () => {
+              this.messages.update(m => [
+                ...m,
+                { role: 'ai', content: '⚠️ Error generating explanation.' }
+              ]);
+              this.thinking.set(false);
+            }
+
+          });
+
       },
+
       error: () => {
         this.messages.update(m => [
           ...m,
@@ -65,6 +90,7 @@ export class ChattingUiComponent {
         ]);
         this.thinking.set(false);
       }
+
     });
   }
 
