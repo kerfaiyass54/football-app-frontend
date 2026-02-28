@@ -127,6 +127,8 @@ import {AllLocationsListComponent} from "./admin/location-management/all-locatio
 import {
   ContinentLocationsComponent
 } from "./admin/location-management/continent-locations/continent-locations.component";
+import {DatabaseChatComponent} from "./admin/database-chat/database-chat.component";
+import {ChattingUiComponent} from "./admin/chatting-ui/chatting-ui.component";
 
 export const routes: Routes = [
   {
@@ -263,6 +265,14 @@ export const routes: Routes = [
           {
             path:'list-location/:continent',
             component:ContinentLocationsComponent
+          },
+          {
+            path:'database-chat',
+            component:DatabaseChatComponent
+          },
+          {
+            path:'chatting-ui/:database',
+            component:ChattingUiComponent
           }
         ]
       },

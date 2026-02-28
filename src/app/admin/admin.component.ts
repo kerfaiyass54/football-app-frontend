@@ -16,7 +16,9 @@ export class AdminComponent {
 
   navbarElements = [
     {index: 0, label: 'Users', link: '/admin/users'},
-    {index: 1, label: 'Locations', link: '/admin/locations'}
+    {index: 1, label: 'Locations', link: '/admin/locations'},
+    {index: 2, label: 'Data chatting', link: '/admin/database-chat'},
+
   ]
 
 

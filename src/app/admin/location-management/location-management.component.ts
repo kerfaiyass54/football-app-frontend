@@ -21,23 +21,23 @@ export class LocationManagementComponent {
     },
     {
       title: 'AFRICA',
-      link: '/admin/list-location/africa'
+      link: '/admin/list-location/AFRICA'
     },
     {
       title: 'ASIA',
-      link: '/admin/list-location/asia'
+      link: '/admin/list-location/ASIA'
     },
     {
       title: 'EUROPE',
-      link: '/admin/list-location/europe'
+      link: '/admin/list-location/EUROPE'
     },
     {
       title: 'AMERICA',
-      link: '/admin/list-location/america'
+      link: '/admin/list-location/AMERICA'
     },
     {
       title: 'SOUTH_AMERICA',
-      link: '/admin/list-location/south-america'
+      link: '/admin/list-location/SOUTH_AMERICA'
     }
   ];
 
