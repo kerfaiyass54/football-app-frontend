@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ChatService } from '../services/chat.service';
 import {PORTS} from "../../Shared/constants/service-ports";
+import {PreviousButtonComponent} from "../../components/buttons/previous-button/previous-button.component";
 
 interface Message {
   role: 'user' | 'ai';
@@ -13,7 +14,7 @@ interface Message {
 @Component({
   selector: 'app-chatting-ui',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PreviousButtonComponent],
   templateUrl: './chatting-ui.component.html',
   styleUrl: './chatting-ui.component.css'
 })
