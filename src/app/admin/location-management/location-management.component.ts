@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { UserCardsComponent } from "../../Shared/shared-ui/user-cards/user-cards.component";
 import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-location-management',
   standalone: true,
   imports: [
-    UserCardsComponent,
     RouterLink
   ],
   templateUrl: './location-management.component.html',

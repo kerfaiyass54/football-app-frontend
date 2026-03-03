@@ -5,7 +5,6 @@ import {NavBarComponent} from "../components/nav-bar/nav-bar.component";
 @Component({
     selector: 'app-admin',
   imports: [
-    NavBarComponent,
     RouterOutlet,
     NavBarComponent
   ],
@@ -17,9 +16,8 @@ export class AdminComponent {
   navbarElements = [
     {index: 0, label: 'Users', link: '/admin/users'},
     {index: 1, label: 'Locations', link: '/admin/locations'},
-    {index: 2, label: 'Data chatting', link: '/admin/database-chat'},
-
-  ]
+    {index: 2, label: 'Data chatting', link: '/admin/database-chat'}
+  ];
 
 
 }

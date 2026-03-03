@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomListComponent } from "../../../Shared/shared-ui/custom-list/custom-list.component";
 import { PreviousButtonComponent } from "../../../components/buttons/previous-button/previous-button.component";
 import { TableColumn } from "../../../components/generic-table/generic-table.component";
-import { LOCATION_TABLE_COLUMNS } from "../../../core/constants/location.constants";
+import { LOCATION_TABLE_COLUMNS } from "../../../Shared/constants/location.constants";
 import {LocationService} from "../../services/location.service";
 
 @Component({

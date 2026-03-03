@@ -1,7 +1,6 @@
 import {Component, computed, OnInit, signal} from '@angular/core';
-import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-cards.component";
 import {OrganizerService} from "../../services/organizer.service";
-import {ORGANIZER_TABLE_COLUMNS} from "../../../core/constants/organizer.constants";
+import {ORGANIZER_TABLE_COLUMNS} from "../../../Shared/constants/organizer.constants";
 import {FormsModule} from "@angular/forms";
 import {GenericTableComponent} from "../../../components/generic-table/generic-table.component";
 import {PreviousButtonComponent} from "../../../components/buttons/previous-button/previous-button.component";
@@ -9,7 +8,6 @@ import {PreviousButtonComponent} from "../../../components/buttons/previous-butt
 @Component({
   selector: 'app-organizers-management',
   imports: [
-    UserCardsComponent,
     FormsModule,
     GenericTableComponent,
     PreviousButtonComponent

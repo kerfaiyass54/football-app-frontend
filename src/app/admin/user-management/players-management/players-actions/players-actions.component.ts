@@ -3,7 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { GenericTableComponent } from "../../../../components/generic-table/generic-table.component";
 import { PlayerService } from "../../../services/player.service";
-import { PLAYER_TABLE_COLUMNS } from "../../../../core/constants/player.constants";
+import { PLAYER_TABLE_COLUMNS } from "../../../../Shared/constants/player.constants";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";
 
 @Component({

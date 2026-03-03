@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
 import { PreviousButtonComponent } from '../../../components/buttons/previous-button/previous-button.component';
 import { SupporterService } from '../../services/supporter.service';
-import { SUPPORTER_TABLE_COLUMNS } from '../../../core/constants/supporter.constants';
+import { SUPPORTER_TABLE_COLUMNS } from '../../../Shared/constants/supporter.constants';
 
 @Component({
   selector: 'app-supporters-management',

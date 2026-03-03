@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Player} from "../../Models/player";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +12,8 @@ export class PlayerService {
   constructor(private http: HttpClient) {}
 
   // CREATE
-  createPlayer(player: any): Observable<Player> {
-    return this.http.post<Player>(`${this.baseUrl}/`, player);
+  createPlayer(player: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/`, player);
   }
 
   // GET BY ID
@@ -37,8 +36,8 @@ export class PlayerService {
   }
 
   // UPDATE
-  updatePlayer(id: string, player: any): Observable<Player> {
-    return this.http.put<Player>(`${this.baseUrl}/${id}`, player);
+  updatePlayer(id: string, player: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/${id}`, player);
   }
 
   // DELETE

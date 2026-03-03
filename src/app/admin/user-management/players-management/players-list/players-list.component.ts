@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableColumn } from "../../../../components/generic-table/generic-table.component";
-import { PLAYER_TABLE_COLUMNS } from "../../../../core/constants/player.constants";
+import { PLAYER_TABLE_COLUMNS } from "../../../../Shared/constants/player.constants";
 import { PlayerService } from "../../../services/player.service";
 import { CustomListComponent } from "../../../../Shared/shared-ui/custom-list/custom-list.component";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";

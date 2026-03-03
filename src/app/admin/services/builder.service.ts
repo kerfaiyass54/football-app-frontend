@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Builder} from "../../Models/builder";
-import {ExpertiseStats} from "../../Models/expertise-stats";
-import {YearsMaxMin} from "../../Models/years-max-min";
+
 
 
 @Injectable({
@@ -16,23 +14,23 @@ export class BuilderService {
   constructor(private http: HttpClient) { }
 
   // CREATE
-  createBuilder(builder: Builder): Observable<Builder> {
-    return this.http.post<Builder>(`${this.baseUrl}/`, builder);
+  createBuilder(builder: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/`, builder);
   }
 
   // GET BY ID
-  getBuilderById(id: any): Observable<Builder> {
-    return this.http.get<Builder>(`${this.baseUrl}/id/${id}`);
+  getBuilderById(id: any): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/id/${id}`);
   }
 
 
-  getByNationality(nationality: string): Observable<Builder[]> {
-    return this.http.get<Builder[]>(`${this.baseUrl}/nationality/${nationality}`);
+  getByNationality(nationality: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/nationality/${nationality}`);
   }
 
 
-  getByExpertise(expertise: string): Observable<Builder[]> {
-    return this.http.get<Builder[]>(`${this.baseUrl}/expertise/${expertise}`);
+  getByExpertise(expertise: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/expertise/${expertise}`);
   }
 
 
@@ -45,14 +43,14 @@ export class BuilderService {
     return this.http.get<any>(`${this.baseUrl}/?page=${page}&size=${size}`);
   }
 
-  getExpertiseStats(expertise: string): Observable<ExpertiseStats> {
-    return this.http.get<ExpertiseStats>(
+  getExpertiseStats(expertise: string): Observable<any> {
+    return this.http.get<any>(
       `${this.baseUrl}/stats/${expertise}`
     );
   }
 
-  getYearsStats(): Observable<YearsMaxMin> {
-    return this.http.get<YearsMaxMin>(
+  getYearsStats(): Observable<any> {
+    return this.http.get<any>(
       `${this.baseUrl}/years`
     );
   }

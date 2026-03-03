@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
 import { PreviousButtonComponent } from '../../../components/buttons/previous-button/previous-button.component';
 import { LocationService } from '../../services/location.service';
-import { LOCATION_TABLE_COLUMNS } from '../../../core/constants/location.constants';
+import { LOCATION_TABLE_COLUMNS } from '../../../Shared/constants/location.constants';
 import {AFRICA, AMERICA, ASIA, Country, EUROPE, SOUTH_AMERICA} from "../../../Shared/constants/countries";
 
 

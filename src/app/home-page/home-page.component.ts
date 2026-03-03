@@ -1,15 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {KeycloakService} from "../Shared/services/keycloak.service";
 import {Router, RouterOutlet} from "@angular/router";
-import {NavBarComponent} from "../components/nav-bar/nav-bar.component";
-import {Button} from "primeng/button";
+
 
 @Component({
     selector: 'app-home-page',
   standalone: true,
   imports: [
     RouterOutlet,
-    NavBarComponent
   ],
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css'

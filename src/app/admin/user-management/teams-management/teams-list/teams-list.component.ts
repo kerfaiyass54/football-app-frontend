@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableColumn } from "../../../../components/generic-table/generic-table.component";
-import { TEAM_TABLE_COLUMNS } from "../../../../core/constants/team.constants";
+import { TEAM_TABLE_COLUMNS } from "../../../../Shared/constants/team.constants";
 import { TeamService } from "../../../services/team.service";
 import { CustomListComponent } from "../../../../Shared/shared-ui/custom-list/custom-list.component";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";

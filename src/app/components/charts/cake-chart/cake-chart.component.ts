@@ -1,13 +1,12 @@
 import {Component, inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
 import {ChartModule, UIChart} from "primeng/chart";
 import {isPlatformBrowser} from "@angular/common";
-import {PreviousButtonComponent} from "../../buttons/previous-button/previous-button.component";
 
 @Component({
   selector: 'app-cake-chart',
   standalone: true,
   imports: [
-    UIChart, ChartModule, PreviousButtonComponent
+    UIChart, ChartModule
   ],
   templateUrl: './cake-chart.component.html',
   styleUrl: './cake-chart.component.css',

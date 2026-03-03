@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
 import { PreviousButtonComponent } from '../../../components/buttons/previous-button/previous-button.component';
 import { RefereeService } from '../../services/referee.service';
-import { REFEREE_TABLE_COLUMNS } from '../../../core/constants/referee.constants';
+import { REFEREE_TABLE_COLUMNS } from '../../../Shared/constants/referee.constants';
 
 
 @Component({
