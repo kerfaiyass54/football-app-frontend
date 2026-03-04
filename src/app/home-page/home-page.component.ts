@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {KeycloakService} from "../Shared/services/keycloak.service";
 import {Router, RouterOutlet} from "@angular/router";
 
@@ -6,6 +6,7 @@ import {Router, RouterOutlet} from "@angular/router";
 @Component({
     selector: 'app-home-page',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterOutlet,
   ],

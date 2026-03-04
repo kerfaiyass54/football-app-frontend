@@ -1,4 +1,4 @@
-import { Component, computed, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal, OnInit } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
 import { GenericTableComponent } from "../../../../components/generic-table/generic-table.component";
@@ -9,6 +9,7 @@ import { PreviousButtonComponent } from "../../../../components/buttons/previous
 @Component({
   selector: 'app-teams-actions',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FormsModule,
     GenericTableComponent,

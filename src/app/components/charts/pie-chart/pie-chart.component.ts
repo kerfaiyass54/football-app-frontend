@@ -1,10 +1,11 @@
-import {Component, OnInit, inject, PLATFORM_ID, Input} from '@angular/core';
+import {Component, OnInit, inject, PLATFORM_ID, Input, ChangeDetectionStrategy} from '@angular/core';
 import { ChartModule } from 'primeng/chart';
 import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-pie-chart',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ChartModule],
   templateUrl: './pie-chart.component.html',
   styleUrl: './pie-chart.component.css',

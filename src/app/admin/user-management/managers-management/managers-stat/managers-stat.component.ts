@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CakeChartComponent } from "../../../../components/charts/cake-chart/cake-chart.component";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";
 import { ManagerService } from "../../../services/manager.service";
@@ -7,6 +7,7 @@ import {forkJoin} from "rxjs";
 @Component({
   selector: 'app-managers-stat',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CakeChartComponent,
     PreviousButtonComponent

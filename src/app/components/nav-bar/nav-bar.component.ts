@@ -1,10 +1,11 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NavBarElement} from "../models/NavBarElement";
 import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
   imports: [

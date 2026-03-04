@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { CustomListComponent } from "../../../Shared/shared-ui/custom-list/custom-list.component";
 import { PreviousButtonComponent } from "../../../components/buttons/previous-button/previous-button.component";
 import { TableColumn } from "../../../components/generic-table/generic-table.component";
@@ -8,12 +8,14 @@ import {LocationService} from "../../services/location.service";
 @Component({
   selector: 'app-locations-list',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CustomListComponent,
     PreviousButtonComponent
   ],
   templateUrl: './all-locations-list.component.html',
   styleUrl: './all-locations-list.component.css',
+
 })
 export class AllLocationsListComponent implements OnInit {
 

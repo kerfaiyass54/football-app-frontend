@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-cards.component";
 
 @Component({
@@ -8,6 +8,8 @@ import {UserCardsComponent} from "../../../Shared/shared-ui/user-cards/user-card
   ],
   templateUrl: './builders-management.component.html',
   styleUrl: './builders-management.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class BuildersManagementComponent implements OnInit{
 

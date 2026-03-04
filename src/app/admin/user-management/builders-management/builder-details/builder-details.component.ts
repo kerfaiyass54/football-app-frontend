@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BuilderService } from '../../../services/builder.service';
@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 @Component({
   selector: 'app-builder-details',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     PreviousButtonComponent,
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
     FormsModule
   ],
   templateUrl: './builder-details.component.html',
-  styleUrl: './builder-details.component.css'
+  styleUrl: './builder-details.component.css',
+
 })
 export class BuilderDetailsComponent implements OnInit {
 

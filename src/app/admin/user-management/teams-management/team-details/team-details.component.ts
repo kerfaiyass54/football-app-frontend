@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from '../../../services/team.service';
@@ -10,6 +10,7 @@ import { FormsModule } from "@angular/forms";
 @Component({
   selector: 'app-team-details',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     PreviousButtonComponent,

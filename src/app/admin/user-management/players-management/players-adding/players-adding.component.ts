@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { COUNTRIES } from '../../../../Shared/constants/countries';
 import { PreviousButtonComponent } from '../../../../components/buttons/previous-button/previous-button.component';
@@ -7,6 +7,7 @@ import { PlayerService } from '../../../services/player.service';
 @Component({
   selector: 'app-players-adding',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, PreviousButtonComponent],
   templateUrl: './players-adding.component.html',
   styleUrl: './players-adding.component.css',

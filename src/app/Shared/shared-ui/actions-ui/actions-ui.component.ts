@@ -1,4 +1,4 @@
-import { Component, computed, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal, OnInit } from '@angular/core';
 import { GenericTableComponent, TableColumn } from "../../../components/generic-table/generic-table.component";
 import { FormsModule } from "@angular/forms";
 import {BuilderService} from "../../../admin/services/builder.service";
@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-actions-ui',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FormsModule,
     GenericTableComponent

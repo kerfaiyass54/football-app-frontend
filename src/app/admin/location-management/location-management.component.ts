@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-location-management',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink
   ],
   templateUrl: './location-management.component.html',
-  styleUrl: './location-management.component.css'
+  styleUrl: './location-management.component.css',
+
 })
 export class LocationManagementComponent {
 

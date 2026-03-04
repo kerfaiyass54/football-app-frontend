@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { TableColumn } from "../../../../components/generic-table/generic-table.component";
 import { PLAYER_TABLE_COLUMNS } from "../../../../Shared/constants/player.constants";
 import { PlayerService } from "../../../services/player.service";
@@ -8,6 +8,7 @@ import { PreviousButtonComponent } from "../../../../components/buttons/previous
 @Component({
   selector: 'app-players-list',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CustomListComponent,
     PreviousButtonComponent

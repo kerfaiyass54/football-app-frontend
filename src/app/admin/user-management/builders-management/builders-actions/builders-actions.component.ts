@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BuilderService } from "../../../services/builder.service";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";
@@ -8,6 +8,7 @@ import { TableColumn } from "../../../../components/generic-table/generic-table.
 @Component({
   selector: 'app-builders-actions',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     PreviousButtonComponent,
     ActionsUiComponent

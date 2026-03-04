@@ -1,10 +1,11 @@
-import {Component, inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input, OnInit, PLATFORM_ID} from '@angular/core';
 import {ChartModule, UIChart} from "primeng/chart";
 import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-cake-chart',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     UIChart, ChartModule
   ],

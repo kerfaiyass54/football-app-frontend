@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {PieChartComponent} from "../../components/charts/pie-chart/pie-chart.component";
 import {StatsCardComponent} from "../../components/cards/stats-card/stats-card.component";
 
 @Component({
   selector: 'app-admin-home',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     PieChartComponent,
     StatsCardComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { TableColumn } from "../../../../components/generic-table/generic-table.component";
 import { TEAM_TABLE_COLUMNS } from "../../../../Shared/constants/team.constants";
 import { TeamService } from "../../../services/team.service";

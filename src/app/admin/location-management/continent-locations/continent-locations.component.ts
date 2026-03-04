@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, computed } from '@angular/core';
+import {Component, OnInit, signal, computed, ChangeDetectionStrategy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
@@ -11,13 +11,14 @@ import {AFRICA, AMERICA, ASIA, Country, EUROPE, SOUTH_AMERICA} from "../../../Sh
 @Component({
   selector: 'app-continent-locations',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FormsModule,
     GenericTableComponent,
     PreviousButtonComponent
   ],
   templateUrl: './continent-locations.component.html',
-  styleUrl: './continent-locations.component.css'
+  styleUrl: './continent-locations.component.css',
 })
 export class ContinentLocationsComponent implements OnInit {
 

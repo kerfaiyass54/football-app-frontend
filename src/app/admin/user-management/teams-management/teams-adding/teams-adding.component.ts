@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreviousButtonComponent } from '../../../../components/buttons/previous-button/previous-button.component';
 import { TeamService } from '../../../services/team.service';
@@ -6,6 +6,7 @@ import { TeamService } from '../../../services/team.service';
 @Component({
   selector: 'app-teams-adding',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, PreviousButtonComponent],
   templateUrl: './teams-adding.component.html',
   styleUrl: './teams-adding.component.css',

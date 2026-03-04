@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {PreviousButtonComponent} from "../../../components/buttons/previous-button/previous-button.component";
 
@@ -6,6 +6,7 @@ import {PreviousButtonComponent} from "../../../components/buttons/previous-butt
 @Component({
   selector: 'app-user-cards',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink,
     PreviousButtonComponent

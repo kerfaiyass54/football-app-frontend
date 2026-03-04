@@ -1,10 +1,11 @@
-import { Component, Input, signal, computed, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, signal, computed, OnChanges, SimpleChanges } from '@angular/core';
 import { GenericTableComponent, TableColumn } from "../../../components/generic-table/generic-table.component";
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-custom-list',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [GenericTableComponent],
   templateUrl: './custom-list.component.html',
   styleUrl: './custom-list.component.css',

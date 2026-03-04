@@ -1,4 +1,4 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
 import { PreviousButtonComponent } from '../../../components/buttons/previous-button/previous-button.component';
@@ -8,6 +8,7 @@ import { SUPPORTER_TABLE_COLUMNS } from '../../../Shared/constants/supporter.con
 @Component({
   selector: 'app-supporters-management',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FormsModule,
     GenericTableComponent,

@@ -3,7 +3,7 @@ import {
   computed,
   input,
   output,
-  signal, effect
+  signal, effect, ChangeDetectionStrategy
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +31,7 @@ export interface TableColumn<T> {
 @Component({
   selector: 'app-generic-table',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule],
   templateUrl: './generic-table.component.html',
   styleUrl: './generic-table.component.css'

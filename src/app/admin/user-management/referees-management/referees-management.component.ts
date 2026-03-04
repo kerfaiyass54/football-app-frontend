@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GenericTableComponent } from '../../../components/generic-table/generic-table.component';
 import { PreviousButtonComponent } from '../../../components/buttons/previous-button/previous-button.component';
@@ -9,6 +9,7 @@ import { REFEREE_TABLE_COLUMNS } from '../../../Shared/constants/referee.constan
 @Component({
   selector: 'app-referees-management',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     FormsModule,
     GenericTableComponent,

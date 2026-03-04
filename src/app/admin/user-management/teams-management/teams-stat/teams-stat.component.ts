@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CakeChartComponent } from "../../../../components/charts/cake-chart/cake-chart.component";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";
 import { TeamService } from "../../../services/team.service";
@@ -6,6 +6,7 @@ import { TeamService } from "../../../services/team.service";
 @Component({
   selector: 'app-teams-stat',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CakeChartComponent,
     PreviousButtonComponent

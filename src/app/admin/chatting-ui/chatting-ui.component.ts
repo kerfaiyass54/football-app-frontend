@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -13,9 +13,10 @@ import {Message} from "../../Shared/models/message.model";
 @Component({
   selector: 'app-chatting-ui',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, PreviousButtonComponent],
   templateUrl: './chatting-ui.component.html',
-  styleUrl: './chatting-ui.component.css'
+  styleUrl: './chatting-ui.component.css',
 })
 export class ChattingUiComponent {
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -7,7 +7,9 @@ import {RouterLink} from "@angular/router";
     RouterLink
   ],
     templateUrl: './user-management.component.html',
-    styleUrl: './user-management.component.css'
+    styleUrl: './user-management.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class UserManagementComponent {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { CustomListComponent } from "../../../../Shared/shared-ui/custom-list/custom-list.component";
 import { TableColumn } from "../../../../components/generic-table/generic-table.component";
 import { PreviousButtonComponent } from "../../../../components/buttons/previous-button/previous-button.component";
@@ -8,6 +8,7 @@ import {BuilderService} from "../../../services/builder.service";
 @Component({
   selector: 'app-builders-list',
   standalone: true,
+changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CustomListComponent,
     PreviousButtonComponent
