@@ -1,5 +1,6 @@
-export interface Location {
+export interface LocationModel {
   id?: string;
   name: string;
-  supporters?: number[];
+  country: string;
+  continent: string;
 }

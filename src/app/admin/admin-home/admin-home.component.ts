@@ -14,9 +14,9 @@ import {StatsCardComponent} from "../../components/cards/stats-card/stats-card.c
 })
 export class AdminHomeComponent {
 
-  dataset: any[] = [4,5,6,8,9,10,12];
-  labels: any[] = ['Players','Managers','Teams','Organizer','Referee','Supporter','Builder'];
-  colors: any[] = ['#ffbe0b','#fb5607','#ff006e','#8338ec','#3a86ff','#4a5759','#22223b']
+  dataset: number[] = [4,5,6,8,9,10,12];
+  labels: string[] = ['Players','Managers','Teams','Organizer','Referee','Supporter','Builder'];
+  colors: string[] = ['#ffbe0b','#fb5607','#ff006e','#8338ec','#3a86ff','#4a5759','#22223b']
 
 
 }

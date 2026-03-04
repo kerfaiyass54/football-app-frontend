@@ -5,11 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ChatService } from '../services/chat.service';
 import { PORTS } from '../../Shared/constants/service-ports';
 import { PreviousButtonComponent } from '../../components/buttons/previous-button/previous-button.component';
+import {Message} from "../../Shared/models/message.model";
 
-interface Message {
-  role: 'user' | 'ai';
-  content: string;
-}
+
+
 
 @Component({
   selector: 'app-chatting-ui',

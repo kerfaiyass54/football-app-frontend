@@ -20,7 +20,7 @@ export class AllLocationsListComponent implements OnInit {
   columns: TableColumn<any>[] = LOCATION_TABLE_COLUMNS;
   data: any[] = [];
 
-  page: number = 1;     // UI page starts at 1
+  page: number = 1;
   size: number = 5;
 
   totalElements: number = 0;
@@ -33,7 +33,6 @@ export class AllLocationsListComponent implements OnInit {
   }
 
   loadLocations() {
-    // Backend pagination starts at 0
     this.locationService.getPaged(this.page - 1, this.size).subscribe({
       next: (res: any) => {
         this.data = res.content;               // Page content

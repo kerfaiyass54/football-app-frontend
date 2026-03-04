@@ -75,9 +75,9 @@ export class ContinentLocationsComponent implements OnInit {
     }
   }
 
-  // =============================
+
   // LOAD BY CONTINENT (PAGED)
-  // =============================
+
   loadLocations() {
     this.locationService
       .getByContinent(this.continent, this.page, this.size)
@@ -86,9 +86,9 @@ export class ContinentLocationsComponent implements OnInit {
       });
   }
 
-  // =============================
+
   // FILTER
-  // =============================
+
   filteredLocations = computed(() => {
     const term = this.searchTerm().toLowerCase();
     if (!term) return this.locations();
@@ -100,16 +100,16 @@ export class ContinentLocationsComponent implements OnInit {
     );
   });
 
-  // =============================
+
   // TABLE SELECTION
-  // =============================
+
   onSelectionChange(data: any[]) {
     this.selectedLocations.set(data);
   }
 
-  // =============================
+
   // ADD
-  // =============================
+
   confirmAddLocation() {
     if (!this.locationName.trim() || !this.selectedCountry) return;
 
@@ -125,9 +125,9 @@ export class ContinentLocationsComponent implements OnInit {
     });
   }
 
-  // =============================
+
   // DELETE (by name)
-  // =============================
+
   deleteLocation() {
     const location = this.selectedLocations()[0];
     if (!location) return;

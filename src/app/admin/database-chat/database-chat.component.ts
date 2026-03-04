@@ -3,6 +3,7 @@ import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-database-chat',
+  standalone: true,
   imports: [
     RouterLink
   ],
