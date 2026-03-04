@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {PieChartComponent} from "../../components/charts/pie-chart/pie-chart.component";
 import {StatsCardComponent} from "../../components/cards/stats-card/stats-card.component";
 
@@ -15,9 +15,27 @@ changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminHomeComponent {
 
-  dataset: number[] = [4,5,6,8,9,10,12];
-  labels: string[] = ['Players','Managers','Teams','Organizer','Referee','Supporter','Builder'];
-  colors: string[] = ['#ffbe0b','#fb5607','#ff006e','#8338ec','#3a86ff','#4a5759','#22223b']
+  dataset = signal<number[]>([4,5,6,8,9,10,12]);
+
+  labels = signal<string[]>([
+    'Players',
+    'Managers',
+    'Teams',
+    'Organizer',
+    'Referee',
+    'Supporter',
+    'Builder'
+  ]);
+
+  colors = signal<string[]>([
+    '#ffbe0b',
+    '#fb5607',
+    '#ff006e',
+    '#8338ec',
+    '#3a86ff',
+    '#4a5759',
+    '#22223b'
+  ]);
 
 
 }

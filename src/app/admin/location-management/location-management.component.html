@@ -6,10 +6,10 @@
     </p>
 
     <div class="hover-card">
-      @for(label of labels; track $index){
-        <div class="panel" [routerLink]="label.link">
-          <span >{{ label.title }}</span>
-        </div>
+      @for (label of labels(); track label.link) {
+        <a class="panel" [routerLink]="label.link">
+          {{ label.title }}
+        </a>
       }
     </div>
   </div>

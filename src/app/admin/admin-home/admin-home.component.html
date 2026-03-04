@@ -5,8 +5,10 @@
 
 
 
-  <app-pie-chart [title]="'User chart'" [subtitle]="'Number of users per role'" [dataset]="dataset" [labels]="labels" [colors]="colors">
-
+  <app-pie-chart
+    [dataset]="dataset()"
+    [labels]="labels()"
+    [colors]="colors()">
   </app-pie-chart>
 
 

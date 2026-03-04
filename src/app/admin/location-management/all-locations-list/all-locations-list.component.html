@@ -3,8 +3,8 @@
   <app-custom-list
     [title]="'Locations'"
     [cols]="columns"
-    [infos]="data"
-    [page]="page"
+    [infos]="data()"
+    [page]="page()"
     [size]="size"
     (pageChange)="onPageChange($event)">
   </app-custom-list>
